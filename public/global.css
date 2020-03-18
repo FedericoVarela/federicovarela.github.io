@@ -1,0 +1,51 @@
+:root{
+	--bg-dark: #0b0c10;
+	--bg-light: #1F2833;
+	--text: white;
+	--text-secondary: #607A9A;
+	--accent: #1D4BEF;
+}
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-family: "Work Sans", "Helvetica", sans-serif;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+body{
+	background: var(--bg-light);
+}
+
+h1{
+	margin: 30px 0;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 42px;
+	color: var(--text);
+}
+
+main{
+	width: 80%;
+	margin: auto;
+}
+
+@media only screen and (max-width: 700px){
+	main{
+		width: 92%;
+	}
+}
+
+p{
+	line-height: 25px;
+}
