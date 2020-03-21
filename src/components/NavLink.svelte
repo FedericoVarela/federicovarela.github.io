@@ -2,6 +2,7 @@
   import { activeStore } from "../stores.js";
   export let keyword;
   export let src;
+  export let cat;
 
   const setActive = () => ($activeStore = keyword);
 </script>
@@ -38,12 +39,34 @@
   img[alt="Home"]{
     margin-bottom: 2px;
   }
-</style>
+
+  button.primary{
+    color: var(--text);
+    font-size: 1.5em;
+  }
+  button.secondary{
+    color: var(--text-secondary);
+    font-size: 1.1em;
+  }
+
+  button.primary:hover, button.secondary:hover {
+    background: var(--bg-light-hover);
+  }
+
+  @media only screen and (max-width: 683px){
+    button:not(.bottom):not(.primary){
+      display: none;
+    }
+  }
+  </style>
 
 <button
   class:active={$activeStore == keyword}
   on:click={setActive}
-  class:bottom={src != null}>
+  class:bottom={src != null}
+  class:primary={cat==="primary"}
+  class:secondary={cat==="secondary"}
+  >
   {#if src}
     <img {src} alt={keyword} />
   {/if}

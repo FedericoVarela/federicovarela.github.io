@@ -1,6 +1,5 @@
 <script>
   import Navbar from "./components/Navbar.svelte";
-  import BotNav from "./components/BotNav.svelte";
   import Transition from "./components/Transition.svelte";
 
   import { activeStore } from "./stores.js";
@@ -10,8 +9,6 @@
   import Skills from "./routes/Skills.svelte";
   import Contact from "./routes/Contact.svelte";
 
-  let width = screen.width;
-
 </script>
 
 <Navbar />
@@ -20,7 +17,7 @@
     <Transition>
       <Home />
     </Transition>
-  {:else if $activeStore == 'My Strategy'}
+  {:else if $activeStore == 'Products'}
     <Transition>
       <Strategy />
     </Transition>
@@ -35,6 +32,4 @@
   {/if}
 
 </main>
-{#if width <= 683}
-  <BotNav />
-{/if}
+

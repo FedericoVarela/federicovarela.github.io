@@ -1,51 +1,56 @@
-:root{
-	--bg-dark: #0b0c10;
-	--bg-light: #1F2833;
-	--text: white;
-	--text-secondary: #607A9A;
-	--accent: #1D4BEF;
+:root {
+    --bg-dark: #0b0c10;
+    --bg-light: #1F2833;
+    --bg-light-hover: rgb(52, 62, 75);
+    --text: white;
+    --text-secondary: #607a9a;
+    --accent: #1D4BEF;
+    --accent-hover: rgb(64, 98, 221);
+    --transparent-hover: rgba(256, 256, 256, 0.4);
 }
 
 * {
-	margin:0;
-	padding:0;
-	border:0;
-	outline:0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-	font-family: "Work Sans", "Helvetica", sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: "Work Sans", "Helvetica", sans-serif;
 }
 
 .clearfix::after {
-	content: "";
-	clear: both;
-	display: table;
-  }
-
-body{
-	background: var(--bg-light);
+    content: "";
+    clear: both;
+    display: table;
 }
 
-h1{
-	margin: 30px 0;
-	font-weight: 600;
-	font-size: 36px;
-	line-height: 42px;
-	color: var(--text);
+body {
+    background: var(--bg-light);
 }
 
-main{
-	width: 80%;
-	margin: auto;
+h1 {
+    margin: 100px 0;
+    font-weight: 600;
+    font-size: 48px;
+    color: var(--text);
 }
 
-@media only screen and (max-width: 700px){
-	main{
-		width: 92%;
-	}
+main {
+    width: 80%;
+    margin: auto;
 }
 
-p{
-	line-height: 25px;
+@media only screen and (max-width: 683px) {
+    body {
+        font-size: 75%;
+    }
+    main {
+        width: 92%;
+    }
+}
+
+p {
+    line-height: 25px;
 }

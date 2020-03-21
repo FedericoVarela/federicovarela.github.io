@@ -12,7 +12,13 @@
       src: "./images/landing1.png",
       contenido: "Lorem ipsum",
       liveUrl: "https://www.figma.com/proto/ArtA70jdZQdc5w0MgrGhOR/Landing?node-id=20%3A1&scaling=min-zoom"
-    }
+    },
+    {
+      titulo: "Landing Design 2",
+      src: "./images/landing2.png",
+      contenido: "Lorem ipsum dolor sit amet",
+      liveUrl: "https://www.figma.com/proto/ArtA70jdZQdc5w0MgrGhOR/Landing?node-id=34%3A68&scaling=scale-down-width"
+    },
   ]
 </script>
 
@@ -24,6 +30,7 @@
       color: var(--text);
       line-height: 28px;
       margin: 40px auto;
+      font-size: 1.5em;
     }
 </style>
 
