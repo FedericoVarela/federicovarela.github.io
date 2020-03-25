@@ -1,4 +1,5 @@
 <script>
+import {projectStore} from "../stores";
   export let projects;
 </script>
 
@@ -56,7 +57,6 @@
   a {
     background-color: var(--accent);
     color: var(--text);
-    text-decoration: none;
     padding: 10px 0;
     border-radius: 100px;
     text-align: center;
@@ -69,19 +69,8 @@
   }
 
   button {
-    border: 1px solid #ffffff;
-    box-sizing: border-box;
-    border-radius: 100px;
-    /* padding: 8px; */
-    color: var(--text);
     width: 45%;
-    transition: background-color 200ms;
   }
-
-  button:hover {
-    background-color: var(--transparent-hover);
-  }
-
   nav {
     width: 100%;
     position: absolute;
@@ -93,7 +82,7 @@
 </style>
 
 <div>
-  {#each projects as project}
+  {#each projects as project, i}
     <!-- TODO: autoscroll -->
     <!-- http://jsfiddle.net/hbg9U/1/ -->
     <section
@@ -102,7 +91,7 @@
       <h3>{project.titulo}</h3>
       <nav>
         <a href={project.liveUrl}>SEE LIVE</a>
-        <button>READ MORE</button>
+        <button class="transparente" on:click={() => $projectStore = i}>READ MORE</button>
       </nav>
     </section>
   {/each}

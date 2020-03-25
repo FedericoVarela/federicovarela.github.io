@@ -28,23 +28,24 @@
 
 body {
     background: var(--bg-light);
+    overflow-x: hidden;
 }
 
 h1 {
-    margin: 100px 0;
+    margin: 70px 0;
     font-weight: 600;
     font-size: 48px;
     color: var(--text);
 }
 
 main {
-    width: 80%;
+    width: 78%;
     margin: auto;
 }
 
 @media only screen and (max-width: 683px) {
     body {
-        font-size: 75%;
+        font-size: 85%;
     }
     main {
         width: 92%;
@@ -53,4 +54,20 @@ main {
 
 p {
     line-height: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.transparente {
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 100px;
+    color: var(--text);
+    transition: background-color 200ms;
+}
+
+.transparente:hover {
+    background-color: var(--transparent-hover);
 }

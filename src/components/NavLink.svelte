@@ -1,10 +1,13 @@
 <script>
-  import { activeStore } from "../stores.js";
+  import { activeStore, projectStore } from "../stores.js";
   export let keyword;
   export let src;
   export let cat;
 
-  const setActive = () => ($activeStore = keyword);
+  const setActive = () => {
+    $activeStore = keyword;
+    $projectStore = null;
+    }
 </script>
 
 <style>

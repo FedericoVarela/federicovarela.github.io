@@ -1,7 +1,6 @@
 <script>
   import { fly } from "svelte/transition";
   import { circInOut } from "svelte/easing";
-  import { getContext } from "svelte";
 
   import NavLink from "./NavLink.svelte";
   import BotNav from "./BotNav.svelte";
@@ -34,6 +33,7 @@
     background: var(--bg-dark);
     height: 3rem;
     margin: auto;
+    width: 100%;
   }
   .container {
     width: 80%;
@@ -109,7 +109,7 @@
     </button>
     <div class="links">
       <NavLink keyword="Home" {src} cat={false} />
-      <NavLink keyword="My Strategy" {src} cat={false} />
+      <NavLink keyword="Products" {src} cat={false} />
       <NavLink keyword="My Skills" {src} cat={false} />
       <NavLink keyword="Contact Me" {src} cat={false} />
       <button class="menu" on:click={toggleOverlay}>

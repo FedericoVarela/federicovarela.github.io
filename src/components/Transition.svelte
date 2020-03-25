@@ -1,7 +1,8 @@
 <script>
   import { fly } from "svelte/transition";
   import { expoOut } from "svelte/easing";
-  let width = screen.width;
+  export let x = screen.width;
+  export let y = 0;
 </script>
 
 <style>
@@ -12,6 +13,6 @@
   }
 </style>
 
-<div in:fly={{ x: -width, duration: 500, easing: expoOut }}>
+<div in:fly={{ x: -x, y: -y, duration: 500, easing: expoOut }}>
   <slot />
 </div>
