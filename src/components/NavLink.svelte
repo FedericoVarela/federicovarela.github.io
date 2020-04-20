@@ -12,12 +12,16 @@
 
 <style>
   button:not(.bottom) {
+    max-height: 53px;
     color: var(--accent);
-    padding: 3rem min(15px, 10%);
+    padding: 1rem min(15px, 10%);
+    transition: background-color 200ms;
+    margin-top: -9px;
+    border-bottom: 2px solid transparent;
   }
 
   button:not(.bottom):hover {
-    background-color: var(--bg-light) !important;
+    border-bottom: 2px solid var(--accent);
   }
 
   .bottom {
@@ -67,8 +71,8 @@
   class:active={$activeStore == keyword}
   on:click={setActive}
   class:bottom={src != null}
-  class:primary={cat==="primary"}
-  class:secondary={cat==="secondary"}
+  class:primary={cat === "primary"}
+  class:secondary={cat === "secondary"}
   >
   {#if src}
     <img {src} alt={keyword} />

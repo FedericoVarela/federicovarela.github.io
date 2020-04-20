@@ -30,17 +30,10 @@
 
 <nav>
   <div class="icons">
-    <aside>
       <NavLink keyword="Home" src="./svg/home.svg" {cat}/>
-    </aside>
-    <aside>
       <NavLink keyword="Products" src="./svg/strategy.svg" {cat} />
-    </aside>
-    <aside>
       <NavLink keyword="My Skills" src="./svg/skills.svg" {cat} />
-    </aside>
-    <aside>
       <NavLink keyword="Contact Me" src="./svg/contact.svg" {cat} />
-    </aside>
   </div>
+
 </nav>

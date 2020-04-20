@@ -20,16 +20,13 @@
     font-family: "Work Sans", "Helvetica", sans-serif;
 }
 
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
 body {
     background: var(--bg-light);
     overflow-x: hidden;
+    min-height: 100vh;
+    width: 99.5%;
 }
+
 
 h1 {
     margin: 70px 0;
@@ -41,6 +38,7 @@ h1 {
 main {
     width: 78%;
     margin: auto;
+    min-height: 100vh;
 }
 
 @media only screen and (max-width: 683px) {
@@ -50,10 +48,14 @@ main {
     main {
         width: 92%;
     }
+    .wrapper > .wrapper {
+        margin-top: calc(-3em - 8px);
+    }
 }
 
 p {
     line-height: 25px;
+    color: var(--text-secondary);
 }
 
 a {
@@ -71,3 +73,36 @@ a {
 .transparente:hover {
     background-color: var(--transparent-hover);
 }
+
+aside > button:hover {
+    border: transparent 1px;
+}
+
+.disabled{
+    color: var(--text);
+    background-color: transparent !important;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+details {
+    color: var(--text);
+}
+
+details > p {
+    color: var(--text-secondary);
+}
+
+button.main-action {
+    background-color: var(--accent);
+    color: var(--text);
+    padding: 10px 0;
+    border-radius: 100px;
+    transition: background-color 200ms ease-in-out;
+}
+
+.wrapper > .wrapper {
+    margin-top: calc(-3em);
+    margin-left: 18.8px;
+}
+

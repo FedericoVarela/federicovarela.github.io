@@ -8,6 +8,7 @@
   import Strategy from "./routes/Strategy.svelte";
   import Skills from "./routes/Skills.svelte";
   import Contact from "./routes/Contact.svelte";
+  import Landing from "./routes/Landing.svelte";
 
 </script>
 
@@ -29,7 +30,10 @@
     <Transition>
       <Contact />
     </Transition>
+  {:else}
+  <Transition>
+      <Landing />
+  </Transition>
   {/if}
 
 </main>
-

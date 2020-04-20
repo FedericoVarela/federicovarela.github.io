@@ -1,6 +1,8 @@
 <script>
-import {projectStore} from "../stores";
+  import { projectStore } from "../stores";
   export let projects;
+  let w = screen.width;
+  let activeProjects = projects.map(p => p.liveUrl.desktop && p.liveUrl.mobile ? "" : "disabled");
 </script>
 
 <style>
@@ -14,20 +16,6 @@ import {projectStore} from "../stores";
       overflow-x: scroll;
       white-space: nowrap;
       display: block;
-    }
-    @keyframes slide {
-      0% {
-        transform: translateX(0px);
-      }
-      50% {
-        transform: translateX(-70%);
-      }
-      100% {
-        transform: translateX(-140%);
-      }
-    }
-    section {
-      animation: slide infinite 4s alternate;
     }
   }
 
@@ -52,6 +40,7 @@ import {projectStore} from "../stores";
     -o-background-size: cover;
     background-size: cover;
     display: inline-block;
+    white-space: normal;
   }
 
   a {
@@ -83,15 +72,18 @@ import {projectStore} from "../stores";
 
 <div>
   {#each projects as project, i}
-    <!-- TODO: autoscroll -->
-    <!-- http://jsfiddle.net/hbg9U/1/ -->
     <section
       style="background-image: linear-gradient(rgba(0,0,0, 0.6),rgba(0,0,0,
       0.6)), url('{project.src}')">
       <h3>{project.titulo}</h3>
       <nav>
-        <a href={project.liveUrl}>SEE LIVE</a>
-        <button class="transparente" on:click={() => $projectStore = i}>READ MORE</button>
+          <a href={w > 683 ? project.liveUrl.desktop : project.liveUrl.mobile} class={activeProjects[i]}>
+            {!activeProjects[i] ? "SEE LIVE" : "COMING SOON!"}
+          </a>
+
+        <button class="transparente" on:click={() => ($projectStore = i)}>
+          READ MORE
+        </button>
       </nav>
     </section>
   {/each}
