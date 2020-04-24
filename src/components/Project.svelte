@@ -34,7 +34,7 @@
   a {
     background-color: var(--accent);
     transition: background-color 200ms;
-    color: var(--text);
+    color: white;
     padding: 10px 0;
     margin: 0 2px;
     border-radius: 100px;

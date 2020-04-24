@@ -16,6 +16,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "@smui/switch": "^1.0.0-beta.21",
+    "rollup-plugin-postcss": "^2.8.2",
     "sirv-cli": "^0.4.4"
   }
 }

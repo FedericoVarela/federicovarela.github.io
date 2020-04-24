@@ -25,7 +25,7 @@
     font-size: 2em;
     top: 10%;
     left: 10%;
-    color: var(--text);
+    color: white;
     margin-right: 2%;
   }
   section {
@@ -45,7 +45,7 @@
 
   a {
     background-color: var(--accent);
-    color: var(--text);
+    color: white;
     padding: 10px 0;
     border-radius: 100px;
     text-align: center;
@@ -59,6 +59,8 @@
 
   button {
     width: 45%;
+    color: white;
+    border-color: white;
   }
   nav {
     width: 100%;

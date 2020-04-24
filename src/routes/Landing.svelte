@@ -7,6 +7,7 @@
     color: var(--text-secondary);
   }
   h1 {
+    margin-top: 150px; 
     font-size: 400%;
   }
   section {

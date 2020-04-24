@@ -35,15 +35,19 @@
     flex-direction: column;
     width: 100%;
     justify-content: space-around;
+    text-align: center;
   }
   h3 {
     color: var(--text);
     grid-area: aside-head;
     font-size: 150%;
+    white-space: nowrap;
   }
   img {
     filter: grayscale(100%) brightness(150%);
     transition: filter ease-in-out 200ms;
+    width: min(10vw, 99px);
+    min-width: 65px;
   }
   img:hover {
     filter: grayscale(0%) brightness(100%);

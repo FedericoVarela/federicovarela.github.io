@@ -5,7 +5,7 @@
     --text: white;
     --text-secondary: #607a9a;
     --accent: #1D4BEF;
-    --accent-hover: rgb(64, 98, 221);
+    --accent-hover: #4062dd;
     --transparent-hover: rgba(256, 256, 256, 0.4);
 }
 
@@ -27,7 +27,6 @@ body {
     width: 99.5%;
 }
 
-
 h1 {
     margin: 70px 0;
     font-weight: 600;
@@ -48,7 +47,7 @@ main {
     main {
         width: 92%;
     }
-    .wrapper > .wrapper {
+    .wrapper>.wrapper {
         margin-top: calc(-3em - 8px);
     }
 }
@@ -63,7 +62,7 @@ a {
 }
 
 .transparente {
-    border: 1px solid #ffffff;
+    border: 1px solid var(--text);
     box-sizing: border-box;
     border-radius: 100px;
     color: var(--text);
@@ -74,11 +73,11 @@ a {
     background-color: var(--transparent-hover);
 }
 
-aside > button:hover {
+aside>button:hover {
     border: transparent 1px;
 }
 
-.disabled{
+.disabled {
     color: var(--text);
     background-color: transparent !important;
     pointer-events: none;
@@ -89,20 +88,19 @@ details {
     color: var(--text);
 }
 
-details > p {
+details>p {
     color: var(--text-secondary);
 }
 
 button.main-action {
     background-color: var(--accent);
-    color: var(--text);
+    color: white;
     padding: 10px 0;
     border-radius: 100px;
     transition: background-color 200ms ease-in-out;
 }
 
-.wrapper > .wrapper {
+.wrapper>.wrapper {
     margin-top: calc(-3em);
     margin-left: 18.8px;
 }
-
