@@ -28,6 +28,8 @@
   ex earum veritatis distinctio excepturi quae temporibus maiores hic.
 </p>
 
+<!-- TODO: animacion de fondo -->
+
 <section>
   <button class="main-action" on:click={() => ($activeStore = 'Home')}>
     MY PROJECTS

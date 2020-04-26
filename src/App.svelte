@@ -10,7 +10,7 @@
   import Skills from "./routes/Skills.svelte";
   import Contact from "./routes/Contact.svelte";
   import Landing from "./routes/Landing.svelte";
-
+  //TODO: traductor
 </script>
 
 <Navbar />

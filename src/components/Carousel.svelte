@@ -73,6 +73,7 @@
 </style>
 
 <div>
+<!--TODO: autoscroll  -->
   {#each projects as project, i}
     <section
       style="background-image: linear-gradient(rgba(0,0,0, 0.6),rgba(0,0,0,

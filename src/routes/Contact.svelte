@@ -90,6 +90,7 @@
   </p>
 <div>
   <form>
+    <!-- TODO: formspree -->
     <input type="text" name="_name" placeholder="Your name" />
     <input type="email" name="_email" placeholder="Your email" />
     <textarea
@@ -101,6 +102,7 @@
   </form>
 
   <h3>Also find me at...</h3>
+  <!--TODO: agregar al interesante en desktop  -->
   <aside>
     <a rel="nofollow" href="https://github.com/FedericoVarela">
       <img src="./svg/github.svg" alt="My Github" />
