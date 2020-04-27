@@ -100,7 +100,10 @@ button.main-action {
     transition: background-color 200ms ease-in-out;
 }
 
+button.main-action:hover {
+    background-color: var(--accent-hover);
+}
+
 .wrapper>.wrapper {
     margin-top: calc(-3em);
-    margin-left: 18.8px;
 }

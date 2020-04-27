@@ -83,14 +83,13 @@
   </button>
   {titulo}
 </h1>
-<!-- <img id="mobile" {src} alt={titulo} /> -->
 <img id="desktop" src={src_dsk} alt={titulo} />
 
 <p>{contenido}</p>
 
 <div>
   <a href={w > 683 ? liveUrl.desktop : liveUrl.mobile} class:disabled>
-    {disabled ? 'COMING SOON!' : 'SEE LIVE'}
+    {@html disabled ? 'COMING SOON!' : 'SEE LIVE <img src="./svg/new_tab.svg" alt="Open in new tab" />'}
   </a>
 
   <button class="transparente" on:click={() => ($activeStore = 'Contact Me')}>

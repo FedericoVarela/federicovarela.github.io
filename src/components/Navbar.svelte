@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { fly } from "svelte/transition";
+  import { fly, fade } from "svelte/transition";
   import { circInOut } from "svelte/easing";
   import Switch from "@smui/switch/bare.js";
   import "@smui/switch/bare.css";
@@ -10,14 +10,14 @@
   import { activeStore } from "../stores.js";
 
   onMount(() => {
-    if (localStorage.getItem("darkMode" == null)) {
-      localStorage.setItem("darkMode", true);
+    if (localStorage.getItem("lightMode" === null)) {
+      localStorage.setItem("lightMode", true);
     }
   });
   let showModal = false;
-  let darkMode =
-    localStorage.getItem("darkMode") === "true" ||
-    localStorage.getItem("darkMode") === true;
+  let lightMode =
+    localStorage.getItem("lightMode") === "true" ||
+    localStorage.getItem("ligthMode") === true;
   let lang = "es";
 
   //Variables for links
@@ -41,8 +41,8 @@
       showModal = false;
     }
   };
-  //Corre cada vez q se cambia darkMode
-  $: localStorage.setItem("darkMode", darkMode);
+  //Corre cada vez q se cambia lightMode
+  $: localStorage.setItem("lightMode", lightMode);
 
   $: {
     $activeStore = $activeStore;
@@ -53,6 +53,13 @@
   document.addEventListener("click", e => {
     if (!e.target.closest(".modal") && !e.target.closest("#settings")) {
       showModal = false;
+    }
+  });
+
+  //Mismo para el overlay
+  document.addEventListener("click", e => {
+    if (!e.target.closest("#sidenav") && !e.target.closest(".menu")) {
+      overlay = false;
     }
   });
 </script>
@@ -126,7 +133,7 @@
     height: 100vh;
     z-index: 1000;
     background-color: var(--bg-dark);
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 10px 10px 10px 100vw rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
   }
@@ -154,7 +161,7 @@
     height: auto;
     border-radius: 8px;
     background-color: var(--bg-dark);
-    box-shadow: 0px 0px 34px 2px #121212;
+    box-shadow: 0px 0px 34px 100vw rgba(0, 0, 0, 0.4);
   }
 
   span {
@@ -180,7 +187,7 @@
 </style>
 
 <svelte:head>
-  {#if !darkMode}
+  {#if lightMode}
     <style>
       :root {
         --bg-dark: #e4e4e4;
@@ -214,8 +221,8 @@
 </nav>
 
 {#if overlay}
-  <aside transition:fly={{ x: 500, duration: 300, easing: circInOut }}>
-    <button class="close" on:click={toggleOverlay}>x</button>
+  <aside transition:fly={{ x: 500, duration: 300, easing: circInOut }} id="sidenav">
+    <button class="close" on:click={toggleOverlay}><img src="./svg/close.svg" alt="Close"></button>
     <NavLink keyword="Home" {src} cat={p} />
     <NavLink keyword="Products" {src} cat={p} />
     <NavLink keyword="My Skills" {src} cat={p} />
@@ -225,15 +232,15 @@
 <BotNav />
 
 {#if showModal}
-  <div class="modal">
+  <div class="modal" in:fade={{duration: 300}}>
     <header>
       <h2>Configuration</h2>
-      <button on:click={() => (showModal = false)} id="close">X</button>
+      <button on:click={() => (showModal = false)} id="close"><img src="./svg/close.svg" alt="Close"></button>
     </header>
     <p>
-      <span>Light Theme</span>
-      <Switch bind:checked={darkMode} />
       <span>Dark Theme</span>
+      <Switch bind:checked={lightMode} />
+      <span>Light Theme</span>
     </p>
   </div>
 {/if}

@@ -58,6 +58,7 @@
 
   button.primary:hover, button.secondary:hover {
     background: var(--bg-light-hover);
+    border-bottom: 1px solid transparent;
   }
 
   @media only screen and (max-width: 683px){

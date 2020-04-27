@@ -1,3 +1,31 @@
+<script>
+  const endpoint = "https://formspree.io/xbjzrjzv";
+  const formData = {
+    name: "",
+    _replyto: "",
+    message: ""
+  };
+  let active = false;
+  const formAction = async () => {
+    active = true;
+    const res = await fetch(endpoint, {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    const text = await res.text();
+    if (res.ok) {
+      return text;
+    } else {
+			throw new Error(text);
+		}
+  };
+  let promise = "";
+  const handleSubmit = () => promise = formAction();
+</script>
+
 <style>
   div {
     display: grid;
@@ -6,7 +34,7 @@
       "form aside-cont";
     grid-column-gap: 2rem;
     grid-template-rows: 1fr 5fr;
-    width: 70%;
+    width: 100%;
   }
   form {
     grid-area: form;
@@ -32,7 +60,7 @@
   aside {
     grid-area: aside-cont;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     width: 100%;
     justify-content: space-around;
     text-align: center;
@@ -61,9 +89,16 @@
     background: var(--accent-hover);
   }
 
-  h1, p {
+  h1,
+  p {
     margin-bottom: 30px;
     margin-left: 10px;
+  }
+
+  @media only screen and (max-width: 1068px) {
+    aside {
+      flex-direction: column;
+    }
   }
 
   @media only screen and (max-width: 683px) {
@@ -72,8 +107,7 @@
         "   form   "
         "aside-head"
         "aside-cont";
-      grid-template-rows: 3fr .5fr 2fr;
-
+      grid-template-rows: 3fr 0.5fr 2fr;
     }
     aside {
       flex-direction: row;
@@ -82,27 +116,68 @@
   a.email {
     color: var(--accent);
   }
+
+  section {
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px;
+    width: 90%;
+  }
+
+  .success {
+    color: rgb(4, 53, 28);
+    background: rgb(124, 224, 137);
+  }
+  .error {
+    color: rgb(53, 4, 4);
+    background: rgb(240, 93, 93);
+  }
+
+  .info {
+    color: rgb(4, 47, 53);
+    background: rgb(93, 193, 240);
+  }
 </style>
 
+{#if active}
+  {#await promise}
+    <section class="info">Enviando tu respuesta...</section>
+  {:then value}
+    <section class="success">Tu mensaje ha sido enviado con éxito</section>
+  {:catch error}
+    <section class="error">{error.message === "Failed to fetch"? "Estás desconectado de Internet" : error.message}</section>
+  {/await}
+{/if}
+
 <h1>Contact Me</h1>
-  <p>
-    Send me a message here or email me at <a class="email" href="mailto:federicovr02@gmail.com	">federicovr02@gmail.com</a>
-  </p>
+<p>
+  Send me a message here or email me at
+  <a class="email" href="mailto:federicovr02@gmail.com ">
+    federicovr02@gmail.com
+  </a>
+</p>
 <div>
-  <form>
-    <!-- TODO: formspree -->
-    <input type="text" name="_name" placeholder="Your name" />
-    <input type="email" name="_email" placeholder="Your email" />
+  <form on:submit|preventDefault={handleSubmit}>
+    <input
+      type="text"
+      name="name"
+      placeholder="Your name"
+      bind:value={formData.name} />
+    <input
+      type="email"
+      name="_replyto"
+      placeholder="Your email"
+      bind:value={formData._replyto} />
     <textarea
-      name="_message"
+      name="message"
       cols="30"
       rows="10"
-      placeholder="Your message here..." />
+      placeholder="Your message here..."
+      bind:value={formData.message} />
     <button type="submit" class="main-action">SUBMIT</button>
   </form>
 
   <h3>Also find me at...</h3>
-  <!--TODO: agregar al interesante en desktop  -->
   <aside>
     <a rel="nofollow" href="https://github.com/FedericoVarela">
       <img src="./svg/github.svg" alt="My Github" />

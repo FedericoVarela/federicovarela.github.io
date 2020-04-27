@@ -6,6 +6,7 @@
 </script>
 
 <style>
+
   div {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
@@ -70,10 +71,10 @@
     display: flex;
     justify-content: space-evenly;
   }
+
 </style>
 
 <div>
-<!--TODO: autoscroll  -->
   {#each projects as project, i}
     <section
       style="background-image: linear-gradient(rgba(0,0,0, 0.6),rgba(0,0,0,
@@ -81,7 +82,7 @@
       <h3>{project.titulo}</h3>
       <nav>
           <a href={w > 683 ? project.liveUrl.desktop : project.liveUrl.mobile} class={activeProjects[i]}>
-            {!activeProjects[i] ? "SEE LIVE" : "COMING SOON!"}
+            {@html !activeProjects[i] ? 'SEE LIVE <img src="./svg/new_tab.svg" alt="Open in new tab" />' : "COMING SOON!"}
           </a>
 
         <button class="transparente" on:click={() => ($projectStore = i)}>
