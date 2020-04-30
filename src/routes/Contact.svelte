@@ -91,7 +91,7 @@
 
   h1,
   p {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     margin-left: 10px;
   }
 
@@ -107,7 +107,7 @@
         "   form   "
         "aside-head"
         "aside-cont";
-      grid-template-rows: 3fr 0.5fr 2fr;
+      grid-template-rows: 3fr 0.3fr 2fr;
     }
     aside {
       flex-direction: row;
@@ -192,3 +192,5 @@
     </a>
   </aside>
 </div>
+
+<!-- Instancias de traduccion: 10 -->

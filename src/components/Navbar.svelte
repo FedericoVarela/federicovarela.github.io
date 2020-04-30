@@ -166,6 +166,7 @@
 
   span {
     color: var(--accent);
+    margin-top: -7px;
   }
 
   p {

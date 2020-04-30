@@ -18,9 +18,9 @@
 
 <main>
   {#if $activeStore === 'Landing'}
-    <Transition>
+    <!-- <Transition> -->
       <Landing />
-    </Transition>
+    <!-- </Transition> -->
   {:else if $activeStore === 'Home'}
     <Transition>
       <Home />

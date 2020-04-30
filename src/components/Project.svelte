@@ -15,7 +15,7 @@
 <style>
   div {
     display: flex;
-    padding-bottom: 20px;
+    padding-bottom: 85px;
   }
   /* #mobile{
         width: 100%;
