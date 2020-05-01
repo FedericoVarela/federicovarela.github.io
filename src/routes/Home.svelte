@@ -69,5 +69,3 @@
     <Project {...projects[$projectStore]} />
   </Transition>
 {/if}
-
-<!-- Instancias de traduccion: 3 -->

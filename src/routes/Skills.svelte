@@ -1,37 +1,103 @@
 <script>
   import Transition from "../components/Transition.svelte";
+  // const skills = JSON.parse(`{
+  //   "en": [
+  //     {
+  //       "titulo": "Education",
+  //       "icono": "./svg/education.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Languages",
+  //       "icono": "./svg/languages.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Web Apps",
+  //       "icono": "./svg/web_apps.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Web Design",
+  //       "icono": "./svg/design.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Platforms",
+  //       "icono": "./svg/platforms.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Experience Design",
+  //       "icono": "./svg/ux.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     }
+  //   ],
+  //   "es": [
+  //     {
+  //       "titulo": "Education",
+  //       "icono": "./svg/education.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Languages",
+  //       "icono": "./svg/languages.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Web Apps",
+  //       "icono": "./svg/web_apps.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Web Design",
+  //       "icono": "./svg/design.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Platforms",
+  //       "icono": "./svg/platforms.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     },
+  //     {
+  //       "titulo": "Experience Design",
+  //       "icono": "./svg/ux.svg",
+  //       "contenido": "Lorem ipsum dolor sit amet"
+  //     }
+  //   ]
+  // }`);
   const skills = [
-    {
-      titulo: "Education",
-      icono: "./svg/education.svg",
-      contenido: "Lorem ipsum dolor sit amet"
-    },
-    {
-      titulo: "Languages",
-      icono: "./svg/languages.svg",
-      contenido: "Lorem ipsum dolor sit amet"
-    },
-    {
-      titulo: "Web Apps",
-      icono: "./svg/web_apps.svg",
-      contenido: "Lorem ipsum dolor sit amet"
-    },
-    {
-      titulo: "Web Design",
-      icono: "./svg/design.svg",
-      contenido: "Lorem ipsum dolor sit amet"
-    },
-    {
-      titulo: "Platforms",
-      icono: "./svg/platforms.svg",
-      contenido: "Lorem ipsum dolor sit amet"
-    },
-    {
-      titulo: "Experience Design",
-      icono: "./svg/ux.svg",
-      contenido: "Lorem ipsum dolor sit amet"
-    }
-  ];
+      {
+        "titulo": "Education",
+        "icono": "./svg/education.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "Languages",
+        "icono": "./svg/languages.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "Web Apps",
+        "icono": "./svg/web_apps.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "Web Design",
+        "icono": "./svg/design.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "Platforms",
+        "icono": "./svg/platforms.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "UX Design",
+        "icono": "./svg/ux.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      }
+    ]
   let activo = null;
   let y = screen.width;
 
@@ -43,6 +109,14 @@
     color: var(--accent);
     margin-top: 10px;
   }
+
+  h2.action {
+    margin-top: -20px;
+    color: var(--accent);
+    font-size: 120%;
+    margin-bottom: 26px;
+  }
+
   section {
     position: relative;
     border-radius: 14px;
@@ -107,11 +181,11 @@
     }
   }
 
-  @media only screen and (max-width: 683px){
-      section.active {
-        /* Hago esto porque tengo q sobreescribir los demás paddings */
-        padding: 0 0 0 12px;
-      }
+  @media only screen and (max-width: 683px) {
+    section.active {
+      /* Hago esto porque tengo q sobreescribir los demás paddings */
+      padding: 0 0 0 12px;
+    }
   }
 </style>
 
@@ -129,14 +203,15 @@
   <Transition y={-y} x={0}>
     <section class="active">
       <button on:click={deactivate} id="back">
-        <img src="./svg/back.svg" alt="Back" width="30" />
+        <img src="./svg/back.svg" alt="Back" width="25" />
       </button>
       <h2>{skills[activo].titulo}</h2>
-      <p>Hola chiquilines</p>
+      <p>{skills[activo].contenido}</p>
     </section>
   </Transition>
 {:else}
   <h1>My Skills</h1>
+  <h2 class="action">Click them to learn more!</h2>
   <div>
     {#each skills as skill, i}
       <section on:click={() => (activo = i)}>

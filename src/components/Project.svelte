@@ -6,7 +6,11 @@
   // export let src;
   export let src_dsk;
   export let contenido;
+  export let contenido_en;
   export let liveUrl;
+
+  //Para evitar el error del linter
+  contenido = contenido;
 
   const disabled = !(liveUrl.desktop && liveUrl.mobile);
   const w = screen.width;
@@ -85,10 +89,10 @@
 </h1>
 <img id="desktop" src={src_dsk} alt={titulo} />
 
-<p>{contenido}</p>
+<p>{contenido_en}</p>
 
 <div>
-  <a href={w > 683 ? liveUrl.desktop : liveUrl.mobile} class:disabled>
+  <a href={w > 683 ? liveUrl.desktop : liveUrl.mobile}>
     {@html disabled ? 'COMING SOON!' : 'SEE LIVE <img src="./svg/new_tab.svg" alt="Open in new tab" />'}
   </a>
 

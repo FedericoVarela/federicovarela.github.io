@@ -7,7 +7,7 @@
 
   import NavLink from "./NavLink.svelte";
   import BotNav from "./BotNav.svelte";
-  import { activeStore } from "../stores.js";
+  import { activeStore, langStore } from "../stores.js";
 
   onMount(() => {
     if (localStorage.getItem("lightMode" === null)) {
@@ -18,7 +18,7 @@
   let lightMode =
     localStorage.getItem("lightMode") === "true" ||
     localStorage.getItem("ligthMode") === true;
-  let lang = "es";
+  let langBuffer = false;
 
   //Variables for links
   const src = null;
@@ -48,6 +48,8 @@
     $activeStore = $activeStore;
     overlay = false;
   }
+
+  $: $langStore = langBuffer ? "es" : "en";
 
   //Cerrar modal cuando clickean afuera
   document.addEventListener("click", e => {
@@ -172,6 +174,7 @@
   p {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 15px;
   }
 
   #close {
@@ -242,6 +245,12 @@
       <span>Dark Theme</span>
       <Switch bind:checked={lightMode} />
       <span>Light Theme</span>
+    </p>
+    <p>
+      <img src="./images/en.png" alt="Switch to English" width="30">
+      <Switch bind:checked={langBuffer} />
+      <img src="./images/es.png" alt="Cambiar a español" width="30">
+
     </p>
   </div>
 {/if}

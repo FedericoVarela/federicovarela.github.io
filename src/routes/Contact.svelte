@@ -141,11 +141,11 @@
 
 {#if active}
   {#await promise}
-    <section class="info">Enviando tu respuesta...</section>
+    <section class="info">Sending your message...</section>
   {:then value}
-    <section class="success">Tu mensaje ha sido enviado con éxito</section>
+    <section class="success">Your message was sent successfully</section>
   {:catch error}
-    <section class="error">{error.message === "Failed to fetch"? "Estás desconectado de Internet" : error.message}</section>
+    <section class="error">{error.message === "Failed to fetch"? "Looks like your device is offline" : error.message}</section>
   {/await}
 {/if}
 

@@ -28,6 +28,32 @@
 
   article {
     position: relative;
+    height: 50vh;
+  }
+
+  aside {
+    position: absolute;
+    bottom: -30%;
+    left: 0;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30vw;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: underline;
+    color: white;
+    padding: 3px 8px;
+  }
+
+  a:hover {
+    color: var(--accent);
+    background-color: var(--bg-dark);
+    border-radius: 8px;
   }
 
   .no-theme {
@@ -61,5 +87,12 @@
       MESSAGE ME
     </button>
   </section>
+  <aside>
+    <ul>
+      <li><a href="https://stackoverflow.com/users/11141825/federico-varela">StackOverflow</a></li>
+      <li><a href="https://github.com/FedericoVarela">Github</a></li>
+      <li><a href="https://dev.to/federicovarela">Dev.to</a></li>
+    </ul>
+  </aside>
 </article>
 <Illustration />
