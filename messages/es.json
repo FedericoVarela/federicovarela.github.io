@@ -1,16 +1,45 @@
 {
-    "page": {
-      "home": {
-        "title": "Inicio",
-        "nav": "Inicio"
-      },
-      "about": {
-        "title": "Sobre nosotros",
-        "nav": "Sobre nosotros"
-      },
-      "contact": {
-        "title": "Contacto",
-        "nav": "Contáctanos"
+  "navbar": {
+      "home": "Inicio",
+      "products": "Productos",
+      "skills": "Especialidades",
+      "contact me": "Contáctame"
+  },
+  "landing": {
+      "titulo": "Hola, soy Federico Varela",
+      "subtitulo": "Soy un desarrollador web full-stack amateur y estudiant de ingeniería eléctrica ",
+      "call-to-action": "MIS PROYECTOS",
+      "call-to-action-secondary": "CONTÁCTAME"
+  },
+  "home": {
+      "titulo": "Mis Proyectos",
+      "subtitulo": "Swipe!",
+      "call-to-action-secondary": "READ MORE",
+      "call-to-action": "SEE LIVE",
+      "disabled": "COMING SOON!"
+  },
+  "strategy": {
+      "titulo": "Products & Services",
+      "contenido": "We need some content over here"
+  },
+  "skills": {
+      "titulo": "My Skills",
+      "subtitulo": "Click on them to learn more!",
+      "secciones": {
+          "Educacion": "Education",
+          "Lenguajes": "Languages",
+          "Aplicaciones web": "Web Apps",
+          "Diseño Web": "Web Design",
+          "Plataformas": "Platforms",
+          "Diseño UX": "UX Design"
       }
-    }
+  },
+  "contact me": {
+      "titulo": "Contact Me",
+      "subtitulo": "Send me a message here or email me at ",
+      "nombre": "Your name",
+      "email": "Your email",
+      "mensaje": "Your message here...",
+      "titulo_redes": "Also find me at..."
   }
+}
