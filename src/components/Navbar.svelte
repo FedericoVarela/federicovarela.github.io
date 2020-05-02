@@ -4,6 +4,7 @@
   import { circInOut } from "svelte/easing";
   import Switch from "@smui/switch/bare.js";
   import "@smui/switch/bare.css";
+  import { locale } from "svelte-i18n";
 
   import NavLink from "./NavLink.svelte";
   import BotNav from "./BotNav.svelte";
@@ -50,6 +51,7 @@
   }
 
   $: $langStore = langBuffer ? "es" : "en";
+  $: locale.set($langStore);
 
   //Cerrar modal cuando clickean afuera
   document.addEventListener("click", e => {
@@ -225,8 +227,12 @@
 </nav>
 
 {#if overlay}
-  <aside transition:fly={{ x: 500, duration: 300, easing: circInOut }} id="sidenav">
-    <button class="close" on:click={toggleOverlay}><img src="./svg/close.svg" alt="Close"></button>
+  <aside
+    transition:fly={{ x: 500, duration: 300, easing: circInOut }}
+    id="sidenav">
+    <button class="close" on:click={toggleOverlay}>
+      <img src="./svg/close.svg" alt="Close" />
+    </button>
     <NavLink keyword="Home" {src} cat={p} />
     <NavLink keyword="Products" {src} cat={p} />
     <NavLink keyword="My Skills" {src} cat={p} />
@@ -236,10 +242,12 @@
 <BotNav />
 
 {#if showModal}
-  <div class="modal" in:fade={{duration: 300}}>
+  <div class="modal" in:fade={{ duration: 300 }}>
     <header>
       <h2>Configuration</h2>
-      <button on:click={() => (showModal = false)} id="close"><img src="./svg/close.svg" alt="Close"></button>
+      <button on:click={() => (showModal = false)} id="close">
+        <img src="./svg/close.svg" alt="Close" />
+      </button>
     </header>
     <p>
       <span>Dark Theme</span>
@@ -247,9 +255,9 @@
       <span>Light Theme</span>
     </p>
     <p>
-      <img src="./images/en.png" alt="Switch to English" width="30">
+      <img src="./images/en.png" alt="Switch to English" width="30" />
       <Switch bind:checked={langBuffer} />
-      <img src="./images/es.png" alt="Cambiar a español" width="30">
+      <img src="./images/es.png" alt="Cambiar a español" width="30" />
 
     </p>
   </div>

@@ -31,7 +31,7 @@
     position: absolute;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url("../images/tierra.png");
-    background-position: 8px -60px;
+    background-position: 8px -12px;
     height: calc(100% - 279px);
     width: 105%;
     z-index: 1;

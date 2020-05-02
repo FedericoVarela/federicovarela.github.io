@@ -11,15 +11,24 @@
   import Contact from "./routes/Contact.svelte";
   import Landing from "./routes/Landing.svelte";
   //TODO: traductor
+
+  import { addMessages, init, getLocaleFromNavigator } from "svelte-i18n";
+  import en from "../messages/en.json"
+  import es from "../messages/es.json"
+  addMessages("en", en);
+  addMessages("es", es);
+  init({
+    fallbackLocale: "en",
+    initialLocale: getLocaleFromNavigator()
+  });
 </script>
 
 <Navbar />
 
-
 <main>
   {#if $activeStore === 'Landing'}
     <!-- <Transition> -->
-      <Landing />
+    <Landing />
     <!-- </Transition> -->
   {:else if $activeStore === 'Home'}
     <Transition>

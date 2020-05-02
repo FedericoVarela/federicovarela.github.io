@@ -1,4 +1,5 @@
 <script>
+  import { _ } from "svelte-i18n";
   import Illustration from "../components/Illustration.svelte";
   import { activeStore } from "../stores.js";
   let activate = false;
@@ -6,7 +7,6 @@
 </script>
 
 <style>
-
   p {
     color: #607a9a;
   }
@@ -71,7 +71,7 @@
 </svelte:head>
 
 <article id="landing">
-  <h1>Lorem ipsum dolor sit amet elit</h1>
+  <h1>{$_("page.home.title")}</h1>
   <p>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident in
     facere ex earum veritatis distinctio excepturi quae temporibus maiores hic.
@@ -89,9 +89,17 @@
   </section>
   <aside>
     <ul>
-      <li><a href="https://stackoverflow.com/users/11141825/federico-varela">StackOverflow</a></li>
-      <li><a href="https://github.com/FedericoVarela">Github</a></li>
-      <li><a href="https://dev.to/federicovarela">Dev.to</a></li>
+      <li>
+        <a href="https://stackoverflow.com/users/11141825/federico-varela">
+          StackOverflow
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/FedericoVarela">Github</a>
+      </li>
+      <li>
+        <a href="https://dev.to/federicovarela">Dev.to</a>
+      </li>
     </ul>
   </aside>
 </article>
