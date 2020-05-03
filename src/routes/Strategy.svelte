@@ -1,4 +1,10 @@
-<h1>Products & Services</h1>
+<script>
+
+    import {_} from "svelte-i18n";
+
+</script>
+
+<h1>{$_("strategy.titulo")}</h1>
 <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, neque natus temporibus voluptatum cupiditate eaque ratione quasi, cumque repellat laborum ex est voluptates. Quis beatae modi officia minus quisquam facilis doloremque ut neque in fugit hic doloribus obcaecati provident nesciunt similique officiis, est alias at eum debitis? Quis accusamus distinctio nemo, numquam nulla saepe provident enim tempora mollitia obcaecati delectus quidem repellat suscipit cupiditate aspernatur nobis, aliquam consequatur itaque dolore rerum beatae atque laboriosam. At libero rem adipisci dolores iste, suscipit enim autem! Ab qui, ea beatae, deleniti accusamus recusandae quae et repellat nihil consequatur aspernatur ipsa quos sequi ex obcaecati ratione veritatis, inventore minus. Facilis nihil a unde, ea odio facere maiores dolores maxime id eius fuga aliquam, quibusdam doloremque modi exercitationem nemo! Nam molestias fugiat tenetur et quidem reprehenderit beatae quaerat totam est possimus veritatis repellat maxime soluta eveniet, ipsum sed, hic consequatur earum expedita quas dolorem? Earum.
+    {@html $_("strategy.contenido")}
 </p>

@@ -1,4 +1,5 @@
 <script>
+import {_} from "svelte-i18n";
   import { activeStore, projectStore } from "../stores.js";
   export let keyword;
   export let src;
@@ -66,6 +67,8 @@
       display: none;
     }
   }
+
+
   </style>
 
 <button
@@ -78,5 +81,5 @@
   {#if src}
     <img {src} alt={keyword} />
   {/if}
-  <span>{keyword}</span>
+  <span>{$_(`navbar.${keyword}`)}</span>
 </button>

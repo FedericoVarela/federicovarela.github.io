@@ -1,4 +1,5 @@
 <script>
+import {_} from "svelte-i18n"
   const endpoint = "https://formspree.io/xbjzrjzv";
   const formData = {
     name: "",
@@ -141,17 +142,17 @@
 
 {#if active}
   {#await promise}
-    <section class="info">Sending your message...</section>
+    <section class="info">{$_("contact-me.mensajes.mandando")}</section>
   {:then value}
-    <section class="success">Your message was sent successfully</section>
+    <section class="success">{$_("contact-me.mensajes.exito")}</section>
   {:catch error}
-    <section class="error">{error.message === "Failed to fetch"? "Looks like your device is offline" : error.message}</section>
+    <section class="error">{error.message === "Failed to fetch"? $_("contact-me.mensajes.error") : error.message}</section>
   {/await}
 {/if}
 
-<h1>Contact Me</h1>
+<h1>{$_("contact-me.titulo")}</h1>
 <p>
-  Send me a message here or email me at
+  {$_("contact-me.subtitulo")}
   <a class="email" href="mailto:federicovr02@gmail.com ">
     federicovr02@gmail.com
   </a>
@@ -161,23 +162,23 @@
     <input
       type="text"
       name="name"
-      placeholder="Your name"
+      placeholder={$_("contact-me.nombre")}
       bind:value={formData.name} />
     <input
       type="email"
       name="_replyto"
-      placeholder="Your email"
+      placeholder={$_("contact-me.email")}
       bind:value={formData._replyto} />
     <textarea
       name="message"
       cols="30"
       rows="10"
-      placeholder="Your message here..."
+      placeholder={$_("contact-me.mensaje")}
       bind:value={formData.message} />
     <button type="submit" class="main-action">SUBMIT</button>
   </form>
 
-  <h3>Also find me at...</h3>
+  <h3>{$_("contact-me.titulo_redes")}</h3>
   <aside>
     <a rel="nofollow" href="https://github.com/FedericoVarela">
       <img src="./svg/github.svg" alt="My Github" />

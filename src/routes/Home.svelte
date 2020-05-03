@@ -1,8 +1,10 @@
 <script>
+  import {_} from "svelte-i18n";
   import Carousel from "../components/Carousel.svelte";
   import Project from "../components/Project.svelte";
   import Transition from "../components/Transition.svelte";
   import { projectStore } from "../stores";
+
   const projects = [
     {
       titulo: "VR Clínica",
@@ -61,8 +63,8 @@
 </style>
 
 {#if $projectStore === null}
-  <h1>My Projects</h1>
-  <h6>Swipe!</h6>
+  <h1>{$_("home.titulo")}</h1>
+  <h6>{$_("home.subtitulo")}</h6>
   <Carousel {projects} />
 {:else}
   <Transition y={-y} x={0}>

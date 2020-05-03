@@ -1,9 +1,10 @@
 {
   "navbar": {
-      "home": "Home",
-      "products": "Products",
-      "skills": "My Skills",
-      "contact me": "Contact Me"
+      "Home": "Home",
+      "Products": "Products",
+      "My Skills": "My Skills",
+      "Contact Me": "Contact Me",
+      "config": "Configuration"
   },
   "landing": {
       "titulo": "Hi, I'm Federico Varela",
@@ -16,7 +17,8 @@
       "subtitulo": "Swipe!",
       "call-to-action-secondary": "READ MORE",
       "call-to-action": "SEE LIVE",
-      "disabled": "COMING SOON!"
+      "disabled": "COMING SOON!",
+      "contact": "LET'S TALK ABOUT THIS"
   },
   "strategy": {
       "titulo": "Products & Services",
@@ -24,22 +26,20 @@
   },
   "skills": {
       "titulo": "My Skills",
-      "subtitulo": "Click on them to learn more!",
-      "secciones": {
-          "Educacion": "Education",
-          "Lenguajes": "Languages",
-          "Aplicaciones web": "Web Apps",
-          "Diseño Web": "Web Design",
-          "Plataformas": "Platforms",
-          "Diseño UX": "UX Design"
-      }
+      "subtitulo": "Click on them to learn more!"
+
   },
-  "contact me": {
+  "contact-me": {
       "titulo": "Contact Me",
       "subtitulo": "Send me a message here or email me at ",
       "nombre": "Your name",
       "email": "Your email",
       "mensaje": "Your message here...",
-      "titulo_redes": "Also find me at..."
+      "titulo_redes": "Also find me at...",
+      "mensajes": {
+          "mandando": "Sending your message...",
+          "exito": "Your message was sent successfully",
+          "error": "Looks like your device is offline"
+      }
   }
 }

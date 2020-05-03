@@ -59,6 +59,7 @@
   .no-theme {
     color: white;
     border-color: white;
+    background-color: rgba(0,0,0,0.3);
   }
 </style>
 
@@ -71,20 +72,17 @@
 </svelte:head>
 
 <article id="landing">
-  <h1>{$_("page.home.title")}</h1>
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident in
-    facere ex earum veritatis distinctio excepturi quae temporibus maiores hic.
-  </p>
+  <h1>{$_("landing.titulo")}</h1>
+  <p> {$_("landing.subtitulo")} </p>
 
   <section>
     <button class="main-action" on:click={() => ($activeStore = 'Home')}>
-      MY PROJECTS
+      {$_("landing.call-to-action")}
     </button>
     <button
       class="transparente no-theme"
       on:click={() => ($activeStore = 'Contact Me')}>
-      MESSAGE ME
+      {$_("landing.call-to-action-secondary")}
     </button>
   </section>
   <aside>

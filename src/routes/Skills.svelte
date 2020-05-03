@@ -1,72 +1,9 @@
 <script>
+  import { _ } from "svelte-i18n";
+  import { langStore } from "../stores.js";
   import Transition from "../components/Transition.svelte";
-  // const skills = JSON.parse(`{
-  //   "en": [
-  //     {
-  //       "titulo": "Education",
-  //       "icono": "./svg/education.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Languages",
-  //       "icono": "./svg/languages.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Web Apps",
-  //       "icono": "./svg/web_apps.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Web Design",
-  //       "icono": "./svg/design.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Platforms",
-  //       "icono": "./svg/platforms.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Experience Design",
-  //       "icono": "./svg/ux.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     }
-  //   ],
-  //   "es": [
-  //     {
-  //       "titulo": "Education",
-  //       "icono": "./svg/education.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Languages",
-  //       "icono": "./svg/languages.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Web Apps",
-  //       "icono": "./svg/web_apps.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Web Design",
-  //       "icono": "./svg/design.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Platforms",
-  //       "icono": "./svg/platforms.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     },
-  //     {
-  //       "titulo": "Experience Design",
-  //       "icono": "./svg/ux.svg",
-  //       "contenido": "Lorem ipsum dolor sit amet"
-  //     }
-  //   ]
-  // }`);
-  const skills = [
+  const skills = JSON.parse(`{
+    "en": [
       {
         "titulo": "Education",
         "icono": "./svg/education.svg",
@@ -97,7 +34,40 @@
         "icono": "./svg/ux.svg",
         "contenido": "Lorem ipsum dolor sit amet"
       }
+    ],
+    "es": [
+      {
+        "titulo": "Educación",
+        "icono": "./svg/education.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "Lenguajes",
+        "icono": "./svg/languages.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "Aplicaciones web",
+        "icono": "./svg/web_apps.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "Diseño web",
+        "icono": "./svg/design.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "Plataformas",
+        "icono": "./svg/platforms.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "titulo": "Diseño UX",
+        "icono": "./svg/ux.svg",
+        "contenido": "Lorem ipsum dolor sit amet"
+      }
     ]
+  }`);
   let activo = null;
   let y = screen.width;
 
@@ -205,15 +175,15 @@
       <button on:click={deactivate} id="back">
         <img src="./svg/back.svg" alt="Back" width="25" />
       </button>
-      <h2>{skills[activo].titulo}</h2>
-      <p>{skills[activo].contenido}</p>
+      <h2>{skills[$langStore][activo].titulo}</h2>
+      <p>{skills[$langStore][activo].contenido}</p>
     </section>
   </Transition>
 {:else}
-  <h1>My Skills</h1>
-  <h2 class="action">Click them to learn more!</h2>
+  <h1>{$_('skills.titulo')}</h1>
+  <h2 class="action">{$_('skills.subtitulo')}</h2>
   <div>
-    {#each skills as skill, i}
+    {#each skills[$langStore] as skill, i}
       <section on:click={() => (activo = i)}>
         <img src={skill.icono} alt={skill.titulo} />
         <h2>{skill.titulo}</h2>

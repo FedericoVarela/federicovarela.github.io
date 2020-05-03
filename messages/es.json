@@ -1,45 +1,39 @@
 {
   "navbar": {
-      "home": "Inicio",
-      "products": "Productos",
-      "skills": "Especialidades",
-      "contact me": "Contáctame"
+      "Home": "Inicio",
+      "Products": "Productos",
+      "My Skills": "Especialidades",
+      "Contact Me": "Contáctame",
+      "config": "Configuración"
   },
   "landing": {
       "titulo": "Hola, soy Federico Varela",
-      "subtitulo": "Soy un desarrollador web full-stack amateur y estudiant de ingeniería eléctrica ",
+      "subtitulo": "Soy un desarrollador web full-stack amateur y estudiante de ingeniería eléctrica ",
       "call-to-action": "MIS PROYECTOS",
       "call-to-action-secondary": "CONTÁCTAME"
   },
   "home": {
       "titulo": "Mis Proyectos",
-      "subtitulo": "Swipe!",
-      "call-to-action-secondary": "READ MORE",
-      "call-to-action": "SEE LIVE",
-      "disabled": "COMING SOON!"
+      "subtitulo": "Desliza para ver más!",
+      "call-to-action-secondary": "LEER MÁS",
+      "call-to-action": "EN VIVO",
+      "disabled": "DISPONIBLE PRONTO!",
+      "contact": "PREGÚNTAME"
   },
   "strategy": {
-      "titulo": "Products & Services",
-      "contenido": "We need some content over here"
+      "titulo": "Productos & Servicios",
+      "contenido": "Falta contenido"
   },
   "skills": {
-      "titulo": "My Skills",
-      "subtitulo": "Click on them to learn more!",
-      "secciones": {
-          "Educacion": "Education",
-          "Lenguajes": "Languages",
-          "Aplicaciones web": "Web Apps",
-          "Diseño Web": "Web Design",
-          "Plataformas": "Platforms",
-          "Diseño UX": "UX Design"
-      }
+      "titulo": "Mis Especialidades",
+      "subtitulo": "Clickéalas para leer más!"
   },
-  "contact me": {
-      "titulo": "Contact Me",
-      "subtitulo": "Send me a message here or email me at ",
-      "nombre": "Your name",
-      "email": "Your email",
-      "mensaje": "Your message here...",
-      "titulo_redes": "Also find me at..."
+  "contact-me": {
+      "titulo": "Contáctame",
+      "subtitulo": "Mándame un mensaje o un email a ",
+      "nombre": "Tu nombre",
+      "email": "Tu email",
+      "mensaje": "Tu mensaje aquí...",
+      "titulo_redes": "Encuéntrame en..."
   }
 }

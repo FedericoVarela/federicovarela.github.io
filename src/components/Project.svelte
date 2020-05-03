@@ -1,7 +1,6 @@
 <script>
-  import { activeStore } from "../stores";
-  import { projectStore } from "../stores";
-
+  import { activeStore, projectStore, langStore } from "../stores";
+  import {_} from "svelte-i18n";
   export let titulo;
   // export let src;
   export let src_dsk;
@@ -66,6 +65,11 @@
     animation: resorte 0.4s ease-in-out;
   }
 
+  .disabled {
+    border: transparent 1px solid;
+    background-color: transparent;
+  }
+
   @keyframes resorte {
     0% {
       transform: translateX(0);
@@ -89,14 +93,14 @@
 </h1>
 <img id="desktop" src={src_dsk} alt={titulo} />
 
-<p>{contenido_en}</p>
+<p>{$langStore === "en" ? contenido_en : contenido}</p>
 
 <div>
-  <a href={w > 683 ? liveUrl.desktop : liveUrl.mobile}>
-    {@html disabled ? 'COMING SOON!' : 'SEE LIVE <img src="./svg/new_tab.svg" alt="Open in new tab" />'}
+  <a href={w > 683 ? liveUrl.desktop : liveUrl.mobile} class:disabled={disabled}>
+    {@html disabled ? $_("home.disabled") : `${$_("home.call-to-action")} <img src="./svg/new_tab.svg" alt="Open in new tab" />`}
   </a>
 
   <button class="transparente" on:click={() => ($activeStore = 'Contact Me')}>
-    LET'S TALK ABOUT THIS
+    {$_("home.contact")}
   </button>
 </div>

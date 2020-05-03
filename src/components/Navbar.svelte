@@ -4,7 +4,7 @@
   import { circInOut } from "svelte/easing";
   import Switch from "@smui/switch/bare.js";
   import "@smui/switch/bare.css";
-  import { locale } from "svelte-i18n";
+  import { locale,_ } from "svelte-i18n";
 
   import NavLink from "./NavLink.svelte";
   import BotNav from "./BotNav.svelte";
@@ -168,8 +168,12 @@
     box-shadow: 0px 0px 34px 100vw rgba(0, 0, 0, 0.4);
   }
 
-  span {
+  /* span {
     color: var(--accent);
+    margin-top: 7px;
+  } */
+
+  img:not([alt="Federico Varela"]) {
     margin-top: -7px;
   }
 
@@ -244,15 +248,15 @@
 {#if showModal}
   <div class="modal" in:fade={{ duration: 300 }}>
     <header>
-      <h2>Configuration</h2>
+      <h2>{$_("navbar.config")}</h2>
       <button on:click={() => (showModal = false)} id="close">
         <img src="./svg/close.svg" alt="Close" />
       </button>
     </header>
     <p>
-      <span>Dark Theme</span>
+      <img src="./svg/night.svg" alt="Switch to Dark Theme" width="30" />
       <Switch bind:checked={lightMode} />
-      <span>Light Theme</span>
+      <img src="./svg/day.svg" alt="Switch to Light Theme" width="30" />
     </p>
     <p>
       <img src="./images/en.png" alt="Switch to English" width="30" />
