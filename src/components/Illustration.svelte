@@ -23,9 +23,15 @@
     filter: url("#turbulence");
     bottom: 0;
     width: 105vw;
-    margin: 0 auto;
+    margin: 0 -10px;
     z-index: -1;
     float: right;
+  }
+
+  @media only screen and (max-height: 680px) {
+    div.agua {
+      filter: none;
+    }
   }
 
   div.tierra {
@@ -33,7 +39,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url("../images/tierra.png");
     /* background-position: 8px 60px; */
-    background-position: 8px calc(60px + 100%);
+    background-position: 8px calc(2px + 100%);
     height: calc(100vh - 279px);
     width: 105%;
     z-index: 1;

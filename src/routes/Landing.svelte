@@ -8,15 +8,14 @@
 
 <style>
   p {
-    color: #607a9a;
+    color: white;
   }
   h1 {
-    margin-top: 150px;
+    margin: 10px;
     font-size: 400%;
     color: white;
   }
   section {
-    margin-top: 10vh;
     display: flex;
     justify-content: flex-start;
   }
@@ -27,22 +26,21 @@
   }
 
   article {
-    position: relative;
-    height: 50vh;
+    margin-top: 5vw;
+    position: fixed;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 
-  aside {
-    position: absolute;
-    bottom: -30%;
-    left: 50%;
-    transform: translateX(-50%); 
-  }
 
   ul {
     display: flex;
-    justify-content: space-evenly;
-    width: 30vw;
+    justify-content: space-around;
+    width: auto;
     list-style: none;
+    margin: auto;
   }
 
   a {
@@ -61,14 +59,9 @@
   .no-theme {
     color: white;
     border-color: white;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
-  @media only screen and (max-width: 683px){
-    h1 {
-      margin-top: 15vh;
-    }
-  }
 </style>
 
 <svelte:head>
@@ -80,17 +73,17 @@
 </svelte:head>
 
 <article id="landing">
-  <h1>{$_("landing.titulo")}</h1>
-  <p> {$_("landing.subtitulo")} </p>
+  <h1>{$_('landing.titulo')}</h1>
+  <p>{$_('landing.subtitulo')}</p>
 
   <section>
     <button class="main-action" on:click={() => ($activeStore = 'Home')}>
-      {$_("landing.call-to-action")}
+      {$_('landing.call-to-action')}
     </button>
     <button
       class="transparente no-theme"
       on:click={() => ($activeStore = 'Contact Me')}>
-      {$_("landing.call-to-action-secondary")}
+      {$_('landing.call-to-action-secondary')}
     </button>
   </section>
   <aside>

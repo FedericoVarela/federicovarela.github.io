@@ -15,7 +15,7 @@
   }
   .icons {
     width: 95%;
-    padding: 10px 0;
+    padding: 4px 0;
     margin: auto;
     display: flex;
     justify-content: space-around;

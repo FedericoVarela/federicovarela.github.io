@@ -79,7 +79,7 @@ import {_} from "svelte-i18n";
   class:secondary={cat === "secondary"}
   >
   {#if src}
-    <img {src} alt={keyword} />
+    <img {src} alt={keyword} width="30"/>
   {/if}
   <span>{$_(`navbar.${keyword}`)}</span>
 </button>

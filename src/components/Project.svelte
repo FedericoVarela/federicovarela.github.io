@@ -24,6 +24,12 @@
         width: 100%;
         object-fit: cover;
     } */
+
+  h1 {
+    text-align: center;
+    z-index: 99;
+  }
+
   #desktop {
     width: 100%;
     object-fit: cover;
@@ -59,6 +65,8 @@
     border-radius: 100px;
     transition: all 200ms ease-in-out;
     background: var(--bg-light);
+    position: absolute;
+    z-index: -2;
   }
   #back:hover {
     filter: brightness(200%);
@@ -85,10 +93,10 @@
   }
 </style>
 
-<h1>
   <button on:click={() => ($projectStore = null)} id="back">
-    <img src="./svg/back.svg" alt="Back" width="30" />
+    <h3><img src="./svg/back.svg" alt="Back" width="20" /> Back</h3>
   </button>
+<h1>
   {titulo}
 </h1>
 <img id="desktop" src={src_dsk} alt={titulo} />
