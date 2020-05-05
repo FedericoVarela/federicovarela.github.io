@@ -9,6 +9,6 @@
   onMount(() => window.scrollTo(0, 0));
 </script>
 
-<div in:fly={{ x: -x, y: -y, duration: 500, easing: expoOut }} class="wrapper">
+<div in:fly={{ x: -x, y: -y, duration: 500, easing: expoOut }} class="wrapper" style="padding-bottom: 5em;">
   <slot />
 </div>

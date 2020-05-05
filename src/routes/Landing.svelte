@@ -34,7 +34,8 @@
   aside {
     position: absolute;
     bottom: -30%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%); 
   }
 
   ul {
@@ -48,18 +49,25 @@
     text-decoration: underline;
     color: white;
     padding: 3px 8px;
+    transition: border-bottom 200ms ease-in-out;
   }
 
   a:hover {
-    color: var(--accent);
-    background-color: var(--bg-dark);
-    border-radius: 8px;
+    text-decoration: none;
+    padding-bottom: 0px;
+    border-bottom: white 5px solid;
   }
 
   .no-theme {
     color: white;
     border-color: white;
     background-color: rgba(0,0,0,0.3);
+  }
+
+  @media only screen and (max-width: 683px){
+    h1 {
+      margin-top: 15vh;
+    }
   }
 </style>
 

@@ -12,6 +12,7 @@
       #81ecf2 42.16%,
       #589ef0 100%
     );
+
   }
 
   div.agua {
@@ -31,7 +32,8 @@
     position: absolute;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url("../images/tierra.png");
-    background-position: 8px 60px;
+    /* background-position: 8px 60px; */
+    background-position: 8px calc(60px + 100%);
     height: calc(100vh - 279px);
     width: 105%;
     z-index: 1;
@@ -52,9 +54,9 @@
 <div class="container">
   <div class="agua" />
   <div class="tierra" />
-  <div class="hielo" />
   <div class="nube-uno" />
   <div class="nube-dos" />
+  <div class="hielo" />
 </div>
 <svg>
   <filter id="turbulence" x="0" y="0" width="100%" height="100%">
@@ -67,7 +69,7 @@
     <animate
       xlink:href="#sea-filter"
       attributeName="baseFrequency"
-      dur="60s"
+      dur="30s"
       keyTimes="0;0.5;1"
       values="0.02 0.06;0.04 0.08;0.02 0.06"
       repeatCount="indefinite" />

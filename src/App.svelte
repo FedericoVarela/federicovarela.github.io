@@ -10,7 +10,6 @@
   import Skills from "./routes/Skills.svelte";
   import Contact from "./routes/Contact.svelte";
   import Landing from "./routes/Landing.svelte";
-  //TODO: traductor
 
   import { addMessages, init, getLocaleFromNavigator } from "svelte-i18n";
   import en from "../messages/en.json"
@@ -27,9 +26,7 @@
 
 <main>
   {#if $activeStore === 'Landing'}
-    <!-- <Transition> -->
     <Landing />
-    <!-- </Transition> -->
   {:else if $activeStore === 'Home'}
     <Transition>
       <Home />
