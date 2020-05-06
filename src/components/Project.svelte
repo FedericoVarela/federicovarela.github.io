@@ -1,6 +1,6 @@
 <script>
   import { activeStore, projectStore, langStore } from "../stores";
-  import {_} from "svelte-i18n";
+  import { _ } from "svelte-i18n";
   export let titulo;
   // export let src;
   export let src_dsk;
@@ -16,61 +16,61 @@
 </script>
 
 <style>
-  div {
-    display: flex;
-    padding-bottom: 85px;
-  }
-  /* #mobile{
-        width: 100%;
-        object-fit: cover;
-    } */
-
   h1 {
+    grid-area: header;
     text-align: center;
     z-index: 99;
   }
+
+  h3 {
+    grid-area: back;
+  }
+
+  h3 > button {
+    color: var(--accent);
+    margin-bottom: 3px;
+  }
+
+  h3 > button:hover {
+    text-decoration: underline;
+  }
+
+  button > img {
+    margin-bottom: -3px;
+  }
+
 
   #desktop {
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 20px;
+    grid-area: imagen;
   }
   p {
     color: var(--text-secondary);
     margin: 20px 0;
+    grid-area: cont;
   }
   a {
+    grid-area: live;
     background-color: var(--accent);
     transition: background-color 200ms;
     color: white;
-    padding: 10px 0;
-    margin: 0 2px;
+    margin: auto;
+    width: auto;
     border-radius: 100px;
     text-align: center;
-    width: 50%;
   }
   a:hover {
     background-color: var(--accent-hover);
   }
 
   .transparente {
-    padding: 10px 0;
-    width: 50%;
-    margin: 0 5px;
-  }
-
-  #back {
-    padding: 6px 20px;
-    border-radius: 100px;
-    transition: all 200ms ease-in-out;
-    background: var(--bg-light);
-    position: absolute;
-    z-index: -2;
-  }
-  #back:hover {
-    filter: brightness(200%);
-    animation: resorte 0.4s ease-in-out;
+    grid-area: contact;
+    width: auto;
+    padding: 5px 0;
+    margin: 0 5px; 
   }
 
   .disabled {
@@ -78,37 +78,37 @@
     background-color: transparent;
   }
 
-  @keyframes resorte {
-    0% {
-      transform: translateX(0);
-    }
-
-    50% {
-      transform: translateX(-10%);
-    }
-
-    100% {
-      transform: translateX(0);
-    }
+  section {
+    margin-top: 4em;
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "back     .   "
+      "imagen imagen"
+      "cont     cont"
+      "live  contact";
+    grid-template-rows: 0.5fr 0.2fr 2.2fr auto 0.3fr;
+    grid-template-columns: 1fr 1fr;
   }
 </style>
 
-  <button on:click={() => ($projectStore = null)} id="back">
-    <h3><img src="./svg/back.svg" alt="Back" width="20" /> Back</h3>
-  </button>
-<h1>
-  {titulo}
-</h1>
-<img id="desktop" src={src_dsk} alt={titulo} />
+<section>
+  <h1>{titulo}</h1>
+  <h3>
+    <button on:click={() => ($projectStore = null)}>
+      <img src="./svg/back.svg" alt="Back" width="15" />
+      Back
+    </button>
+  </h3>
+  <img id="desktop" src={src_dsk} alt={titulo} />
 
-<p>{$langStore === "en" ? contenido_en : contenido}</p>
+  <p>{$langStore === 'en' ? contenido_en : contenido}</p>
 
-<div>
-  <a href={w > 683 ? liveUrl.desktop : liveUrl.mobile} class:disabled={disabled}>
-    {@html disabled ? $_("home.disabled") : `${$_("home.call-to-action")} <img src="./svg/new_tab.svg" alt="Open in new tab" />`}
-  </a>
+    <a href={w > 683 ? liveUrl.desktop : liveUrl.mobile} class:disabled={disabled}>
+      {@html disabled ? $_('home.disabled') : `${$_('home.call-to-action')} <img src="./svg/new_tab.svg" alt="Open in new tab" />`}
+    </a>
 
-  <button class="transparente" on:click={() => ($activeStore = 'Contact Me')}>
-    {$_("home.contact")}
-  </button>
-</div>
+    <button class="transparente" on:click={() => ($activeStore = 'Contact Me')}>
+      {$_('home.contact')}
+    </button>
+</section>

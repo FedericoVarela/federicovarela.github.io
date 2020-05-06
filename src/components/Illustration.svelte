@@ -12,13 +12,13 @@
       #81ecf2 42.16%,
       #589ef0 100%
     );
-
   }
 
   div.agua {
     position: absolute;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url("../images/agua.png");
+    background-position-x: center;
     height: 329px;
     filter: url("#turbulence");
     bottom: 0;
@@ -39,7 +39,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url("../images/tierra.png");
     /* background-position: 8px 60px; */
-    background-position: 8px calc(2px + 100%);
+    background-position: center calc(2px + 100%);
     height: calc(100vh - 279px);
     width: 105%;
     z-index: 1;
@@ -81,3 +81,5 @@
       repeatCount="indefinite" />
   </filter>
 </svg>
+
+<!-- TODO: visibilidad en pantallas chicas -->
