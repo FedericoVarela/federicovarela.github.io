@@ -28,9 +28,26 @@
     float: right;
   }
 
-  @media only screen and (max-height: 680px) {
+  @media only screen and (max-height: 680px){
     div.agua {
       filter: none;
+    }
+  }
+
+  @media only screen and (max-height: 680px) and (max-width: 539px) {
+    div.container > * {
+      display: none;
+    }
+    div.container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/ilustracion-mini.png"),
+        radial-gradient(
+          61.49% 60.79% at 50% 60.79%,
+          #81ecf2 42.16%,
+          #589ef0 100%
+        );
+      background-position: center center;
+      background-repeat: no-repeat;
     }
   }
 

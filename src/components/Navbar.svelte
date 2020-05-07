@@ -259,9 +259,9 @@
       <img src="./svg/day.svg" alt="Switch to Light Theme" width="30" />
     </p>
     <p>
-      <img src="./images/en.png" alt="Switch to English" width="30" />
+      <img src="./images/en.png" alt="Switch to English" width="30" height="20"/>
       <Switch bind:checked={langBuffer} />
-      <img src="./images/es.png" alt="Cambiar a español" width="30" />
+      <img src="./images/es.png" alt="Cambiar a español" width="30" height="20"/>
 
     </p>
   </div>

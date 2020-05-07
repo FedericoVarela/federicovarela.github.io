@@ -18,8 +18,7 @@
 <style>
   h1 {
     grid-area: header;
-    text-align: center;
-    z-index: 99;
+    text-align: left;
   }
 
   h3 {
@@ -58,9 +57,10 @@
     transition: background-color 200ms;
     color: white;
     margin: auto;
-    width: auto;
+    width: 100%;
     border-radius: 100px;
     text-align: center;
+    padding: 15px 0;
   }
   a:hover {
     background-color: var(--accent-hover);
@@ -87,8 +87,9 @@
       "imagen imagen"
       "cont     cont"
       "live  contact";
-    grid-template-rows: 0.5fr 0.2fr 2.2fr auto 0.3fr;
+    grid-template-rows: 0.5fr 0.2fr auto auto 0.15fr;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
   }
 </style>
 

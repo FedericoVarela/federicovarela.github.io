@@ -17,7 +17,7 @@
       {
         "titulo": "Web Apps",
         "icono": "./svg/web_apps.svg",
-        "contenido": "Lorem ipsum dolor sit amet"
+        "contenido": "Lorem ipsum dolor sit amet "
       },
       {
         "titulo": "Web Design",
@@ -117,38 +117,27 @@
     width: 100vw;
     height: 100%;
     border-radius: 0;
+    display: grid;
+    grid-template-areas:
+      "arrow head ."
+      ". content  .";
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto 1fr;
   }
   .active > h2 {
+    grid-area: head;
     margin: 50px 0 50px 0;
     font-size: 300%;
     color: var(--text);
   }
   #back {
+    grid-area: arrow;
     z-index: 999;
-    transform: translate(-40vw, 14vh);
-    background: var(--bg-dark);
-    padding: 0 20px;
-    border-radius: 100px;
-    transition: all 200ms ease-in-out;
+    filter: grayscale(100%);
+    transition: filter 200ms ease-in-out;
   }
   #back:hover {
-    filter: brightness(200%);
-    animation-name: resorte;
-    animation-duration: 0.4s;
-  }
-
-  @keyframes resorte {
-    0% {
-      transform: translate(-40vw, 14vh);
-    }
-
-    50% {
-      transform: translate(calc(-40vw - 10%), 14vh);
-    }
-
-    100% {
-      transform: translate(-40vw, 14vh);
-    }
+    filter: grayscale(0%);
   }
 
   @media only screen and (max-width: 683px) {
@@ -156,6 +145,10 @@
       /* Hago esto porque tengo q sobreescribir los demás paddings */
       padding: 0 0 0 12px;
     }
+  }
+
+  .active > p {
+    grid-area: content;
   }
 </style>
 

@@ -1,4 +1,5 @@
 <script>
+  import {_} from "svelte-i18n";
   import { projectStore } from "../stores";
   export let projects;
   let w = screen.width;
@@ -82,11 +83,11 @@
       <h3>{project.titulo}</h3>
       <nav>
           <a href={w > 683 ? project.liveUrl.desktop : project.liveUrl.mobile} class={activeProjects[i]}>
-            {@html !activeProjects[i] ? 'SEE LIVE <img src="./svg/new_tab.svg" alt="Open in new tab" />' : "COMING SOON!"}
+            {@html !activeProjects[i] ? `${$_("home.call-to-action")} <img src="./svg/new_tab.svg" alt="Open in new tab" />` : $_("home.disabled")}
           </a>
 
         <button class="transparente" on:click={() => ($projectStore = i)}>
-          READ MORE
+          {$_("home.call-to-action-secondary")}
         </button>
       </nav>
     </section>

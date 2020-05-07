@@ -11,7 +11,7 @@
     color: white;
   }
   h1 {
-    margin: 10px;
+    margin: 10px 0;
     font-size: 400%;
     color: white;
   }
