@@ -4,7 +4,7 @@
   import { circInOut } from "svelte/easing";
   import Switch from "@smui/switch/bare.js";
   import "@smui/switch/bare.css";
-  import { locale,_ } from "svelte-i18n";
+  import { locale, _ } from "svelte-i18n";
 
   import NavLink from "./NavLink.svelte";
   import BotNav from "./BotNav.svelte";
@@ -54,7 +54,10 @@
   $: locale.set($langStore);
 
   //Cerrar modal cuando clickean afuera
+  //TODO: cambiar esto para q no use closest
   document.addEventListener("click", e => {
+    console.log(e.target);
+
     if (!e.target.closest(".modal") && !e.target.closest("#settings")) {
       showModal = false;
     }
@@ -74,6 +77,7 @@
     height: 3rem;
     margin: auto;
     width: calc(100% + 5px);
+    box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.5);
   }
   .container {
     width: 80%;
@@ -221,10 +225,10 @@
       <NavLink keyword="My Skills" {src} cat={false} />
       <NavLink keyword="Contact Me" {src} cat={false} />
       <button id="settings" on:click={toggleModal}>
-        <img src="./svg/settings.svg" alt="Settings" />
+        <img src="./svg/settings.svg" alt="Settings" width="20" height="20"/>
       </button>
       <button class="menu" on:click={toggleOverlay}>
-        <img src="./svg/hamburger.svg" alt="Menu" />
+        <img src="./svg/hamburger.svg" alt="Menu" width="30" height="18" />
       </button>
     </div>
   </div>
@@ -248,20 +252,28 @@
 {#if showModal}
   <div class="modal" in:fade={{ duration: 300 }}>
     <header>
-      <h2>{$_("navbar.config")}</h2>
+      <h2>{$_('navbar.config')}</h2>
       <button on:click={() => (showModal = false)} id="close">
         <img src="./svg/close.svg" alt="Close" />
       </button>
     </header>
     <p>
-      <img src="./svg/night.svg" alt="Switch to Dark Theme" width="30" />
+      <img src="./svg/night.svg" alt="Switch to Dark Theme" width="30" height="30" />
       <Switch bind:checked={lightMode} />
-      <img src="./svg/day.svg" alt="Switch to Light Theme" width="30" />
+      <img src="./svg/day.svg" alt="Switch to Light Theme" width="30" height="30"/>
     </p>
     <p>
-      <img src="./images/en.png" alt="Switch to English" width="30" height="20"/>
+      <img
+        src="./images/en.png"
+        alt="Switch to English"
+        width="30"
+        height="20" />
       <Switch bind:checked={langBuffer} />
-      <img src="./images/es.png" alt="Cambiar a español" width="30" height="20"/>
+      <img
+        src="./images/es.png"
+        alt="Cambiar a español"
+        width="30"
+        height="20" />
 
     </p>
   </div>

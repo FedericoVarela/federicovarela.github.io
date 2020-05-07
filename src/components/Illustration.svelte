@@ -39,7 +39,7 @@
       display: none;
     }
     div.container {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
         url("../images/ilustracion-mini.png"),
         radial-gradient(
           61.49% 60.79% at 50% 60.79%,
@@ -99,4 +99,3 @@
   </filter>
 </svg>
 
-<!-- TODO: visibilidad en pantallas chicas -->

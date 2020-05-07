@@ -5,7 +5,7 @@
     "build": "rollup -c --environment BUILD:production",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "deploy": "rollup -c --environment BUILD:production && gh-pages -d public"
+    "deploy": "gh-pages -d public"
   },
   "homepage": "https://federicovarela.github.io/Portfolio/",
   "devDependencies": {
