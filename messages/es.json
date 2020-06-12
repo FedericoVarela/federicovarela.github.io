@@ -34,6 +34,8 @@
       "nombre": "Tu nombre",
       "email": "Tu email",
       "mensaje": "Tu mensaje aquí...",
-      "titulo_redes": "Encuéntrame en..."
+      "titulo_redes": "Encuéntrame en...",
+      "enviar": "ENVIAR"
+
   }
 }

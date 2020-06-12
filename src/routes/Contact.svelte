@@ -1,5 +1,5 @@
 <script>
-import {_} from "svelte-i18n"
+  import { _ } from "svelte-i18n";
   const endpoint = "https://formspree.io/xbjzrjzv";
   const formData = {
     name: "",
@@ -20,11 +20,11 @@ import {_} from "svelte-i18n"
     if (res.ok) {
       return text;
     } else {
-			throw new Error(text);
-		}
+      throw new Error(text);
+    }
   };
   let promise = "";
-  const handleSubmit = () => promise = formAction();
+  const handleSubmit = () => (promise = formAction());
 </script>
 
 <style>
@@ -142,17 +142,19 @@ import {_} from "svelte-i18n"
 
 {#if active}
   {#await promise}
-    <section class="info">{$_("contact-me.mensajes.mandando")}</section>
+    <section class="info">{$_('contact-me.mensajes.mandando')}</section>
   {:then value}
-    <section class="success">{$_("contact-me.mensajes.exito")}</section>
+    <section class="success">{$_('contact-me.mensajes.exito')}</section>
   {:catch error}
-    <section class="error">{error.message === "Failed to fetch"? $_("contact-me.mensajes.error") : error.message}</section>
+    <section class="error">
+      {error.message === 'Failed to fetch' ? $_('contact-me.mensajes.error') : error.message}
+    </section>
   {/await}
 {/if}
 
-<h1>{$_("contact-me.titulo")}</h1>
+<h1>{$_('contact-me.titulo')}</h1>
 <p>
-  {$_("contact-me.subtitulo")}
+  {$_('contact-me.subtitulo')}
   <a class="email" href="mailto:federicovr02@gmail.com ">
     federicovr02@gmail.com
   </a>
@@ -162,23 +164,23 @@ import {_} from "svelte-i18n"
     <input
       type="text"
       name="name"
-      placeholder={$_("contact-me.nombre")}
+      placeholder={$_('contact-me.nombre')}
       bind:value={formData.name} />
     <input
       type="email"
       name="_replyto"
-      placeholder={$_("contact-me.email")}
+      placeholder={$_('contact-me.email')}
       bind:value={formData._replyto} />
     <textarea
       name="message"
       cols="30"
       rows="10"
-      placeholder={$_("contact-me.mensaje")}
+      placeholder={$_('contact-me.mensaje')}
       bind:value={formData.message} />
-    <button type="submit" class="main-action">SUBMIT</button>
+    <button type="submit" class="main-action">{$_('contact-me.enviar')}</button>
   </form>
 
-  <h3>{$_("contact-me.titulo_redes")}</h3>
+  <h3>{$_('contact-me.titulo_redes')}</h3>
   <aside>
     <a rel="nofollow" href="https://github.com/FedericoVarela">
       <img src="./svg/github.svg" alt="My Github" />
@@ -193,4 +195,3 @@ import {_} from "svelte-i18n"
     </a>
   </aside>
 </div>
-

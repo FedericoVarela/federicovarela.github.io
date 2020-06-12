@@ -55,7 +55,7 @@
     grid-area: live;
     background-color: var(--accent);
     transition: background-color 200ms;
-    color: white;
+    color: var(--text);
     margin: auto;
     width: 100%;
     border-radius: 100px;

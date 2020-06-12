@@ -112,9 +112,9 @@
   }
 
   @media only screen and (max-width: 683px) {
-    nav.navbar {
+    /* nav.navbar {
       width: 100%;
-    }
+    } */
     #settings {
       float: right;
     }

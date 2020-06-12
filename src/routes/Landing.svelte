@@ -50,16 +50,16 @@
     transition: border-bottom 200ms ease-in-out;
   }
 
-  a:hover {
+  /* a:hover {
     text-decoration: none;
     padding-bottom: 0px;
     border-bottom: white 5px solid;
-  }
+  } */
 
   .no-theme {
     color: white;
-    border-color: white;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #1e2029;
+    border: transparent;
   }
 
 </style>

@@ -35,6 +35,7 @@
       "email": "Your email",
       "mensaje": "Your message here...",
       "titulo_redes": "Also find me at...",
+      "enviar": "SUBMIT",
       "mensajes": {
           "mandando": "Sending your message...",
           "exito": "Your message was sent successfully",
