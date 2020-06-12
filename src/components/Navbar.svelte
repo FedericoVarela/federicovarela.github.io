@@ -56,8 +56,6 @@
   //Cerrar modal cuando clickean afuera
   //TODO: cambiar esto para q no use closest
   document.addEventListener("click", e => {
-    console.log(e.target);
-
     if (!e.target.closest(".modal") && !e.target.closest("#settings")) {
       showModal = false;
     }
@@ -77,7 +75,7 @@
     height: 3rem;
     margin: auto;
     width: calc(100% + 5px);
-    box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
   }
   .container {
     width: 80%;
@@ -209,6 +207,12 @@
         --bg-light-hover: #f2f2f2;
         --text: #121212;
         --text-secondary: #353535;
+
+        --gradient-1: #8FBCBB;
+        --gradient-2: #88C0D0;
+        --gradient-3: #81A1C1;
+        --gradient-4: #5E81AC;
+        --gradient-5: #325f96;
       }
     </style>
   {/if}
@@ -225,7 +229,7 @@
       <NavLink keyword="My Skills" {src} cat={false} />
       <NavLink keyword="Contact Me" {src} cat={false} />
       <button id="settings" on:click={toggleModal}>
-        <img src="./svg/settings.svg" alt="Settings" width="20" height="20"/>
+        <img src="./svg/settings.svg" alt="Settings" width="20" height="20" />
       </button>
       <button class="menu" on:click={toggleOverlay}>
         <img src="./svg/hamburger.svg" alt="Menu" width="30" height="18" />
@@ -258,9 +262,17 @@
       </button>
     </header>
     <p>
-      <img src="./svg/night.svg" alt="Switch to Dark Theme" width="30" height="30" />
+      <img
+        src="./svg/night.svg"
+        alt="Switch to Dark Theme"
+        width="30"
+        height="30" />
       <Switch bind:checked={lightMode} />
-      <img src="./svg/day.svg" alt="Switch to Light Theme" width="30" height="30"/>
+      <img
+        src="./svg/day.svg"
+        alt="Switch to Light Theme"
+        width="30"
+        height="30" />
     </p>
     <p>
       <img

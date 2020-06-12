@@ -12,7 +12,7 @@
       src_dsk: "./images/VRClinica_Desktop.png",
       contenido:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facere consequuntur sapiente obcaecati ducimus fugiat perferendis illo laboriosam nisi est quam officiis mollitia at autem provident odit, et dicta eaque consectetur omnis enim atque velit praesentium! Quis voluptatibus illo ex ab suscipit impedit? Sequi nobis sapiente ullam vel quas repudiandae ipsum in quod deserunt explicabo officiis culpa eos esse consectetur omnis illo dolores quo minima sed molestias, corrupti facilis accusantium voluptate. Exercitationem, repudiandae neque! Culpa tenetur optio eligendi et, consectetur reiciendis, ut, corrupti blanditiis assumenda natus cum ipsa voluptates. Obcaecati corrupti assumenda magnam exercitationem officiis pariatur harum possimus aliquid optio!",
-      contenido_en: "",
+      contenido_en: "This is a website for a small ",
       liveUrl: {
         desktop: null,
         mobile: null

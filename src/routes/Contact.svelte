@@ -194,4 +194,3 @@ import {_} from "svelte-i18n"
   </aside>
 </div>
 
-<!-- Instancias de traduccion: 10 -->
