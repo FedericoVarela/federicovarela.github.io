@@ -248,6 +248,7 @@
     .active > p {
       line-height: 30px;
       margin-bottom: 5em;
+      height: 100vh;
     }
   }
 

@@ -140,7 +140,7 @@
   aside {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
     width: 50vw;
     min-width: 300px;
     height: 100vh;
@@ -183,7 +183,7 @@
   } */
 
   img:not([alt="Federico Varela"]) {
-    margin-top: -7px;
+    margin-top: -3px;
   }
 
   p {
@@ -197,6 +197,7 @@
     margin-top: -20px;
     float: right;
     font-weight: 600;
+    height: 27px;
   }
 
   header {
@@ -265,7 +266,7 @@
     <header>
       <h2>{$_('navbar.config')}</h2>
       <button on:click={() => (showModal = false)} id="close">
-        <img src="./svg/close.svg" alt="Close" />
+        <img src="./svg/close.svg" alt="Close" width="22" height="22" />
       </button>
     </header>
     <p>
