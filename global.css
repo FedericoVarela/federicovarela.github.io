@@ -78,6 +78,10 @@
       line-height: 25px;
       color: var(--text-secondary);
   }
+
+  b {
+      color: var(--text);
+  }
   
   a {
       text-decoration: none;
@@ -109,13 +113,9 @@
       pointer-events: none;
       white-space: nowrap;
   }
-  
-  details {
-      color: var(--text);
-  }
-  
-  details>p {
-      color: var(--text-secondary);
+
+  button#settings, button.menu {
+    height: 3rem;
   }
   
   button.main-action {
@@ -178,7 +178,7 @@
       background: url("./svg/nube_2.svg") repeat-x;
       position: absolute;
       top: 100px;
-      /* width: 6400px; */
+      width: 6400px;
       z-index: -999;
       height: 405px;
       animation: wave 25s cubic-bezier( 0.36, 0.45, 0.63, 0.53) .125s infinite;
