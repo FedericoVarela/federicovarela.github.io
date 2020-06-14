@@ -1,7 +1,7 @@
 <style>
   div.container {
     position: fixed;
-    width: 105vw;
+    width: 101vw;
     height: 100vh;
     margin: 0 auto;
     top: 3em;
@@ -31,6 +31,10 @@
   @media only screen and (max-height: 680px){
     div.agua {
       filter: none;
+    }
+
+    div.container {
+      left: 0;  
     }
   }
 

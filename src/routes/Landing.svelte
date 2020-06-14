@@ -62,6 +62,10 @@
     border: transparent;
   }
 
+  .no-theme:hover {
+    background-color: #1F2833;
+  }
+
 </style>
 
 <svelte:head>
