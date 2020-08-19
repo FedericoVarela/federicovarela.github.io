@@ -41,6 +41,7 @@
     grid-area: form;
     display: flex;
     flex-direction: column;
+    max-width: 90vw;
   }
   input,
   textarea {

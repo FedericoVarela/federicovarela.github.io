@@ -22,7 +22,8 @@
   },
   "strategy": {
       "titulo": "Productos & Servicios",
-      "contenido": "Falta contenido"
+      "subtitulo": "Encuentra que arquitectura satisface mejor tus necesidades o",
+      "boton": "consúltame"
   },
   "skills": {
       "titulo": "Mis Especialidades",

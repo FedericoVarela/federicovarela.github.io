@@ -21,7 +21,9 @@
       "contact": "LET'S TALK ABOUT THIS"
   },
   "strategy": {
-      "titulo": "Products & Services"
+      "titulo": "Products & Services",
+      "subtitulo": "Find out which architecture best suits your needs or",
+      "boton": "consult me"
   },
   "skills": {
       "titulo": "My Skills",

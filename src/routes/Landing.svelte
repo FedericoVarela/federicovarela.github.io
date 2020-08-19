@@ -26,7 +26,7 @@
   }
 
   article {
-    margin-top: 5vw;
+    margin-top: calc(5vw + 3rem);
     position: fixed;
     height: 80vh;
     display: flex;
@@ -62,12 +62,21 @@
     border: transparent;
   }
 
+  .no-theme:hover {
+    background-color: #1F2833;
+  }
+
 </style>
 
 <svelte:head>
   <style>
     body {
       overflow: hidden;
+    }
+
+    nav.navbar {
+      position: fixed;
+      top: 0;
     }
   </style>
 </svelte:head>

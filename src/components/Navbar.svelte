@@ -54,7 +54,6 @@
   $: locale.set($langStore);
 
   //Cerrar modal cuando clickean afuera
-  //TODO: cambiar esto para q no use closest
   document.addEventListener("click", e => {
     if (!e.target.closest(".modal") && !e.target.closest("#settings")) {
       showModal = false;
@@ -77,6 +76,11 @@
     width: calc(100% + 5px);
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
   }
+
+  .navbar button:not(.menu) {
+    height: fit-content;
+  }
+
   .container {
     width: 80%;
     margin: auto;
@@ -97,9 +101,12 @@
     padding: 0 10px;
   }
 
+
+
   .menu {
     float: right;
     display: none;
+    height: 3rem;
   }
 
   h2 {
@@ -133,7 +140,7 @@
   aside {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
     width: 50vw;
     min-width: 300px;
     height: 100vh;
@@ -163,7 +170,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: max(calc(50% - 100px), 220px);
+    width: 220px;
     height: auto;
     border-radius: 8px;
     background-color: var(--bg-dark);
@@ -176,7 +183,7 @@
   } */
 
   img:not([alt="Federico Varela"]) {
-    margin-top: -7px;
+    margin-top: -3px;
   }
 
   p {
@@ -190,6 +197,7 @@
     margin-top: -20px;
     float: right;
     font-weight: 600;
+    height: 27px;
   }
 
   header {
@@ -258,7 +266,7 @@
     <header>
       <h2>{$_('navbar.config')}</h2>
       <button on:click={() => (showModal = false)} id="close">
-        <img src="./svg/close.svg" alt="Close" />
+        <img src="./svg/close.svg" alt="Close" width="22" height="22" />
       </button>
     </header>
     <p>

@@ -38,6 +38,7 @@
   }
   const py = new Date("9/1/2017");
   const js = new Date("6/1/2019");
+  const html = new Date("1/4/2019");
 
   const skills = JSON.parse(`{
     "en": [
@@ -54,7 +55,8 @@
         "titulo": "Languages",
         "icono": "./svg/languages.svg",
         "contenido": "Currently, I have a strong grasping of the fundamentals of Python and Javascript and I use them on a regular basis, \
-        and I have been working with them for ${timeDiff(py, 0)} and ${timeDiff(js,0)}, respectively. To a lesser extent, I'm familiar with Rust and SQL, \
+        and I have been working with them for ${timeDiff(py, 0)} and ${timeDiff(js,0)}, respectively. Aditionally, I have ${timeDiff(html, 0)} of \
+        experience with HTML and CSS. To a lesser extent, I'm familiar with Rust and SQL, \
         both of which I intend to delve deeper into."
       },
       {
@@ -116,13 +118,8 @@
         "icono": "./svg/languages.svg",
         "contenido": " \
           Actualmente, tengo una buena comprensión de los fundamentos de Python y Javascript y los uso regularmente, \
-          y vengo trabajando con ellos desde hace ${timeDiff(
-            py,
-            1
-          )} y ${timeDiff(
-    js,
-    1
-  )}, respectivamente. En menor medida, estoy familiarizado con Rust y SQL, \
+          y vengo trabajando con ellos desde hace ${timeDiff(py,1)} y ${timeDiff(js,1)}, respectivamente. Adicionalmente tengo ${timeDiff(html, 1)} de experiencia con HTML y CSS. \
+           En menor medida, estoy familiarizado con Rust y SQL, \
           en los cuales tengo la intención de profundizar."
       },
       {
@@ -251,6 +248,7 @@
     .active > p {
       line-height: 30px;
       margin-bottom: 5em;
+      height: 100vh;
     }
   }
 
@@ -260,7 +258,6 @@
   }
 </style>
 
-<!-- TODO: mete margin al fondo de los skills -->
 <svelte:head>
   {#if activo != null}
     <style>
