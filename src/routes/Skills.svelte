@@ -2,6 +2,7 @@
   import { _ } from "svelte-i18n";
   import { langStore } from "../stores.js";
   import Transition from "../components/Transition.svelte";
+  import SkillModal from "../components/SkillModal.svelte"
 
   function timeDiff(date, lang) {
     const dict =
@@ -62,7 +63,7 @@
       {
         "titulo": "Web Apps",
         "icono": "./svg/web_apps.svg",
-        "contenido": "I've been steering towards the development of web applications sincethe start of 2019. I work with both \
+        "contenido": "I've been steering towards the development of web applications since the start of 2019. I work with both \
         backend development, which involves the server that hosts the application and databases, and frontend development \
         on the other hand, which focuses on the interface and the user experience. I'm fluent in \
         <a href='https://www.djangoproject.com/'>Django</a>, a Python framework \
@@ -207,88 +208,20 @@
   section:not(.active):hover {
     background-color: var(--bg-light-hover);
   }
-  .active {
-    margin: 3rem 0 -10px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: 100vw;
-    height: 100%;
-    border-radius: 0;
-    display: grid;
-    grid-template-areas:
-      "arrow head ."
-      ". content  .";
-    grid-template-columns: 1fr 10fr 1fr;
-    grid-template-rows: auto 1fr;
-  }
-  .active > h2 {
-    grid-area: head;
-    margin: 50px 0 50px 0;
-    font-size: 300%;
-    color: var(--text);
-  }
-  #back {
-    grid-area: arrow;
-    z-index: 999;
-    filter: grayscale(100%);
-    transition: filter 200ms ease-in-out;
-  }
-  #back:hover {
-    filter: grayscale(0%);
-  }
-
-  @media only screen and (max-width: 683px) {
-    section.active {
-      /* Hago esto porque tengo q sobreescribir los demás paddings */
-      padding: 0 0 0 12px;
-    }
-
-    .active > p {
-      line-height: 30px;
-      margin-bottom: 5em;
-      height: 100vh;
-    }
-  }
-
-  .active > p {
-    grid-area: content;
-    line-height: 35px;
-  }
 </style>
 
-<svelte:head>
-  {#if activo != null}
-    <style>
-      body {
-        background: var(--bg-dark);
-      }
-    </style>
-  {/if}
-</svelte:head>
 
 {#if activo != null}
-  <Transition y={-y} x={0}>
-    <section class="active">
-      <button on:click={deactivate} id="back">
-        <img src="./svg/back.svg" alt="Back" width="25" />
-      </button>
-      <h2>{skills[$langStore][activo].titulo}</h2>
-      <p>
-        {@html skills[$langStore][activo].contenido}
-      </p>
-    </section>
-  </Transition>
-{:else}
+  <SkillModal data_en={skills["en"][activo]} data_es={skills["es"][activo]} on:deactivate={deactivate} />
+{/if}
+
   <h1>{$_('skills.titulo')}</h1>
   <h2 class="action">{$_('skills.subtitulo')}</h2>
   <div>
     {#each skills[$langStore] as skill, i}
-      <section on:click={() => (activo = i)}>
-        <img src={skill.icono} alt={skill.titulo} />
-        <h2>{skill.titulo}</h2>
+      <section on:click={() => (activo = i)} class="clickable">
+        <img src={skill.icono} alt={skill.titulo} class="clickable" />
+        <h2 class="clickable">{skill.titulo}</h2>
       </section>
     {/each}
   </div>
-{/if}

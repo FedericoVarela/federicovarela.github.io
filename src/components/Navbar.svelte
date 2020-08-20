@@ -165,7 +165,7 @@
 
   .modal {
     padding: 20px 50px 30px 50px;
-    z-index: 3;
+    z-index: 999;
     position: absolute;
     top: 50%;
     left: 50%;
