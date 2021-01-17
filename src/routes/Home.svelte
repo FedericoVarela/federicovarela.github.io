@@ -5,67 +5,56 @@
   import Transition from "../components/Transition.svelte";
   import { projectStore } from "../stores";
 
-  const projects = [
-    {
-      titulo: "VR Clínica",
-      src: "./images/VRClinica.png",
-      src_dsk: "./images/VRClinica_Desktop.png",
-      contenido:
-        "Este es un sitio web para una pequeña empresa de cosmetología en Uruguay. Contiene un panel de administración para la dueña del sitio \
-      que permite gestionar todo el contenido y las páginas de productos. La página de destino contiene imágenes de alta calidad con un efecto \
-      parallax e íconos animados. Usé Django para el servidor y Bootstrap y JQuery / Vanilla Javascript para la interfaz.",
-      contenido_en:
-        "This is a website for a small cosmetology business in Uruguay. It contains an admin panel for the site's \
-      owner to manage all the content and the product pages. The landing page contains high quality pictures with a parallax \
-      effect and animated icons. I used Django for the server and Bootstrap and JQuery/Vanilla Javascript for the frontend.",
-      liveUrl: {
-        desktop: null,
-        mobile: null
+  // I still keep two separate urls in case I want to publish a Figma sketch
+  const { projects } = JSON.parse(`{
+   "projects":[
+      {
+         "titulo":"Blog Demo",
+         "src":"./images/blog_mobile.png",
+         "src_dsk":"./images/blog.png",
+         "contenido":"Esta página web es una prueba de concepto de la arquitectura de aplicaciones de una sola página usando \
+         Django y Sapper. Se adhiere a las especificaciones de <a href='https://github.com/gothinkster/realworld'>Real World App </a> \
+         es decir, permite al usuario crear una cuenta, escribir artículos, escribir comentarios a esos artículos, navegar por los artículos de otros usuarios, y muchos más. La idea principal detrás de este proyecto fue practicar el uso de ciertas tecnologías y los detalles de implementación de ciertas funcionalidades.<br><br> El código está disponible públicamente \
+         así puedo recibir retroalimentación y crear una referencia para aquellos que quieran implementar algo similar. ",
+         "contenido_en":"This website is a proof of concept of the single page app architecture using Django and Sapper. \
+         It adheres to the <a href='https://github.com/gothinkster/realworld'>Real World App </a> specifications, that is, \
+         it allows the user to create an account, write articles, write comments to said articles, browse other users articles, and many more. <br><br> \
+         The main idea behind this project was to practice the use of certain technologies and the implementation details of certain features, \
+         while making the code available publicly to receive feedback and to create a reference for anyone trying to implement something similar.",
+         "liveUrl":{
+            "desktop":"https://federicovarela.herokuapp.com/",
+            "mobile":"https://federicovarela.herokuapp.com/"
+         }
+      },
+      {
+         "titulo":"Pipenv tasks", 
+         "src":"./images/pipenv_mobile.png",
+         "src_dsk":"./images/pipenv.png",
+         "contenido":"Esta es una extensión de VSCode que creé para mejorar mi flujo de trabajo con Python. \
+         Permite al usuario ejecutar comandos comunes como tareas de VSCode en vez de escribirlos manualmente cada vez. \
+         Aunque la creé principalmente para mi uso personal, tiene más de 2000 descargas en VSCode Marketplace",
+         "contenido_en":"This is a VSCode extension I made to improve my Python workflow. \
+          It allows the user to execute common commands as VSCode tasks instead of writing them manually every time. \
+          Although I made it mainly for personal use, it already has more than 2000 downloads in the VSCode Marketplace.",
+         "liveUrl":{
+            "desktop":"https://marketplace.visualstudio.com/items?itemName=FedericoVarela.pipenv-scripts",
+            "mobile":"https://marketplace.visualstudio.com/items?itemName=FedericoVarela.pipenv-scripts"
+         }
       }
-    },
-    {
-      titulo: "Material Landing Design",
-      src: "./images/landing1.png",
-      src_dsk: "./images/material_landing_desktop.png",
-      contenido:
-        "Creé un concepto basado en el diseño material de Google que presenta una página de destino clásica. \
-        Muestra varias de las necesidades comunes de cualquier empresa, como un formulario de contacto, creación de cuenta y \
-      una sección de prueba gratuita con una ilustración del producto.",
-      contenido_en:
-        "I created a concept based on Google's Material Design which features a classical landing page \
-      layout. It showcases several of the commonplace needs of any enterprise, such as a contact form, account creation form and \
-      a free trial section with a product mockup.",
-      liveUrl: {
-        desktop:
-          "https://www.figma.com/proto/ArtA70jdZQdc5w0MgrGhOR/Landing?node-id=1%3A8&scaling=scale-down-width",
-        mobile:
-          "https://www.figma.com/proto/ArtA70jdZQdc5w0MgrGhOR/Landing?node-id=20%3A1&scaling=min-zoom"
-      }
-    },
-    {
-      titulo: "Landing Design",
-      src: "./images/landing2_mobile.png",
-      src_dsk: "./images/landing2.png",
-      contenido: "Este concepto de diseño busca tomar algunos riesgos y combinar algunos aspectos más antiguos, como la fuente \
-      serif, con patrones más contemporáneos como gradientes. Cuenta con varias ilustraciones, así como \
-      íconos experimentales como marcas de agua de fondo. En cuanto al contenido, abarca las secciones normales que tiene una página de destino, \
-      como la elegante sección de héroe, los íconos que resumen la identidad de la compañía y una sección de prueba gratuita con un \
-      maqueta de aplicación móvil",
-      contenido_en: "This design concept looks to take some risks and blend some old fashioned aspects, such as the serif \
-      font, with more contemporary patterns like gradients. It features several illustrations, as well as \
-      the experimental icons as backdrop watermarks. Content-wise, it englobes the normal sections a landing page has, \
-      such as the elegant hero section, the icons which summarize the company's identity and a free trial section with a \
-      mobile app mockup",
-      liveUrl: {
-        desktop:
-          "https://www.figma.com/proto/ArtA70jdZQdc5w0MgrGhOR/Landing?node-id=34%3A68&scaling=scale-down-width",
-        mobile:
-          "https://www.figma.com/proto/ArtA70jdZQdc5w0MgrGhOR/Landing?node-id=99%3A10&scaling=scale-down"
-      }
-    }
-  ];
+   ]
+}`);
   let y = screen.width;
 </script>
+
+{#if $projectStore === null}
+  <h1>{$_("home.titulo")}</h1>
+  <h6>{$_("home.subtitulo")}</h6>
+  <Carousel {projects} />
+{:else}
+  <Transition y={-y} x={0}>
+    <Project {...projects[$projectStore]} />
+  </Transition>
+{/if}
 
 <style>
   h6 {
@@ -79,13 +68,3 @@
     }
   }
 </style>
-
-{#if $projectStore === null}
-  <h1>{$_('home.titulo')}</h1>
-  <h6>{$_('home.subtitulo')}</h6>
-  <Carousel {projects} />
-{:else}
-  <Transition y={-y} x={0}>
-    <Project {...projects[$projectStore]} />
-  </Transition>
-{/if}

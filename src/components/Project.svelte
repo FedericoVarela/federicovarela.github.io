@@ -104,7 +104,7 @@
   </h3>
   <img id="desktop" src={src_dsk} alt={titulo} />
 
-  <p>{$langStore === 'en' ? contenido_en : contenido}</p>
+  <p>{@html $langStore === 'en' ? contenido_en : contenido}</p>
 
     <a href={w > 683 ? liveUrl.desktop : liveUrl.mobile} class:disabled={disabled}>
       {@html disabled ? $_('home.disabled') : `${$_('home.call-to-action')} <img src="./svg/new_tab.svg" alt="Open in new tab" />`}

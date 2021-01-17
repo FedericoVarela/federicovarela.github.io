@@ -36,7 +36,12 @@
       "email": "Tu email",
       "mensaje": "Tu mensaje aquí...",
       "titulo_redes": "Encuéntrame en...",
-      "enviar": "ENVIAR"
+      "enviar": "ENVIAR",
+      "mensajes": {
+        "mandando": "Enviando tu mensaje...",
+        "exito": "Tu mensaje fue enviado exitosamente",
+        "error": "Parece que tu dispositivo está desconectado"
+    }
 
   }
 }
