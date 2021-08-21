@@ -53,7 +53,7 @@
   }
 
   p {
-    line-height: 190%;
+    line-height: 250%;
   }
 </style>
 

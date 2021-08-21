@@ -30,7 +30,7 @@
   h2 {
     color: var(--text);
     font-size: 130%;
-    margin-bottom: 10px;
+    margin: 1.2em 0;
   }
   ul {
     list-style-type: none;
@@ -49,8 +49,12 @@
     color: var(--accent);
   }
 
-  h1 + p {
+  h1 {
     margin-bottom: 1.5em;
+  }
+
+  p {
+    line-height: 2.4em
   }
 
   .line {
