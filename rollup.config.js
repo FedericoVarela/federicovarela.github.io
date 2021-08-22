@@ -5,6 +5,7 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import postcss from "rollup-plugin-postcss";
 import json from "@rollup/plugin-json";
+const rollupPluginJsonParse = require('rollup-plugin-json-parse');
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -53,7 +54,10 @@ export default {
         // If we're building for production (npm run build
         // instead of npm run dev), minify
         production && terser(),
-        json()
+        json(),
+        rollupPluginJsonParse({
+            minJSONStringSize: 256
+        })
     ],
     watch: {
         clearScreen: false
