@@ -166,7 +166,7 @@
   .nube-uno {
       background: url("./svg/nube_1.svg") repeat-x;
       position: absolute;
-      top: 152px;
+      bottom: 477px;
       width: 6400px;
       height: 198px;
       animation: wave 37s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
@@ -177,7 +177,7 @@
   .nube-dos {
       background: url("./svg/nube_2.svg") repeat-x;
       position: absolute;
-      top: 100px;
+      bottom: 350px;
       width: 6400px;
       z-index: -999;
       height: 405px;

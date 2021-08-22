@@ -1,3 +1,30 @@
+<div class="container">
+  <div class="agua" />
+  <div class="tierra" />
+  <div class="nube-uno" />
+  <div class="nube-dos" />
+  <div class="hielo" />
+</div>
+<svg>
+  <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+    <feTurbulence
+      id="sea-filter"
+      numOctaves="3"
+      seed="2"
+      baseFrequency="0.02 0.05"
+    />
+    <feDisplacementMap scale="20" in="SourceGraphic" />
+    <animate
+      xlink:href="#sea-filter"
+      attributeName="baseFrequency"
+      dur="30s"
+      keyTimes="0;0.5;1"
+      values="0.02 0.06;0.04 0.08;0.02 0.06"
+      repeatCount="indefinite"
+    />
+  </filter>
+</svg>
+
 <style>
   div.container {
     position: fixed;
@@ -28,13 +55,13 @@
     float: right;
   }
 
-  @media only screen and (max-height: 680px){
+  @media only screen and (max-height: 680px) {
     div.agua {
       filter: none;
     }
 
     div.container {
-      left: 0;  
+      left: 0;
     }
   }
 
@@ -65,6 +92,7 @@
     width: 105%;
     z-index: 1;
     top: -42px;
+    background-repeat: repeat-x; 
   }
 
   div.hielo {
@@ -77,29 +105,3 @@
     bottom: 201px;
   }
 </style>
-
-<div class="container">
-  <div class="agua" />
-  <div class="tierra" />
-  <div class="nube-uno" />
-  <div class="nube-dos" />
-  <div class="hielo" />
-</div>
-<svg>
-  <filter id="turbulence" x="0" y="0" width="100%" height="100%">
-    <feTurbulence
-      id="sea-filter"
-      numOctaves="3"
-      seed="2"
-      baseFrequency="0.02 0.05" />
-    <feDisplacementMap scale="20" in="SourceGraphic" />
-    <animate
-      xlink:href="#sea-filter"
-      attributeName="baseFrequency"
-      dur="30s"
-      keyTimes="0;0.5;1"
-      values="0.02 0.06;0.04 0.08;0.02 0.06"
-      repeatCount="indefinite" />
-  </filter>
-</svg>
-
